@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hero Banner Image Selection - Small Private Practice</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #0F1419;
+            background: #FAFAF9;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        header {
+            background: #0A4D4E;
+            color: #FAFAF9;
+            padding: 30px;
+            border-radius: 8px;
+            margin-bottom: 40px;
+        }
+
+        header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 1.1em;
+            opacity: 0.9;
+        }
+
+        .specs {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            border-left: 4px solid #00D9FF;
+        }
+
+        .specs h2 {
+            color: #0A4D4E;
+            margin-bottom: 15px;
+        }
+
+        .specs ul {
+            list-style: none;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 10px;
+        }
+
+        .specs li {
+            padding: 8px 0;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .specs strong {
+            color: #0D6A6C;
+        }
+
+        .match-section {
+            margin-bottom: 50px;
+        }
+
+        .match-header {
+            background: linear-gradient(135deg, #0D6A6C, #0A4D4E);
+            color: white;
+            padding: 20px 30px;
+            border-radius: 8px 8px 0 0;
+            margin-bottom: 0;
+        }
+
+        .match-header h2 {
+            font-size: 1.8em;
+            margin-bottom: 5px;
+        }
+
+        .match-header p {
+            opacity: 0.9;
+            font-size: 0.95em;
+        }
+
+        .match-high { background: linear-gradient(135deg, #00D9FF, #0D6A6C); }
+        .match-medium { background: linear-gradient(135deg, #5EEEFF, #00D9FF); }
+        .match-low { background: linear-gradient(135deg, #8B95A5, #0D6A6C); }
+
+        .images-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 30px;
+            padding: 30px;
+            background: white;
+            border-radius: 0 0 8px 8px;
+        }
+
+        .image-card {
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .image-card:hover {
+            border-color: #00D9FF;
+            box-shadow: 0 8px 20px rgba(0, 217, 255, 0.2);
+            transform: translateY(-4px);
+        }
+
+        .image-wrapper {
+            position: relative;
+            width: 100%;
+            height: 300px;
+            background: #f5f5f5;
+            overflow: hidden;
+        }
+
+        .image-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .image-wrapper .loading-error {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            color: #8B95A5;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .image-info {
+            padding: 20px;
+        }
+
+        .image-info h3 {
+            color: #0A4D4E;
+            font-size: 1.1em;
+            margin-bottom: 10px;
+            line-height: 1.3;
+        }
+
+        .image-meta {
+            display: grid;
+            gap: 8px;
+            margin: 15px 0;
+            font-size: 0.9em;
+        }
+
+        .image-meta div {
+            display: flex;
+            justify-content: space-between;
+            padding: 5px 0;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .image-meta strong {
+            color: #0D6A6C;
+        }
+
+        .image-meta .value {
+            color: #8B95A5;
+        }
+
+        .source-link {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 8px 16px;
+            background: #0A4D4E;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            font-size: 0.9em;
+            transition: background 0.3s ease;
+        }
+
+        .source-link:hover {
+            background: #0D6A6C;
+        }
+
+        .confidence-badge {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            font-weight: 600;
+            text-transform: uppercase;
+            margin-top: 10px;
+        }
+
+        .confidence-high {
+            background: #00D9FF;
+            color: #0F1419;
+        }
+
+        .confidence-medium {
+            background: #5EEEFF;
+            color: #0F1419;
+        }
+
+        .confidence-low {
+            background: #8B95A5;
+            color: white;
+        }
+
+        .note {
+            background: #FFF8E1;
+            border-left: 4px solid #FF6B6B;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+
+        .note strong {
+            color: #FF6B6B;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 60px;
+            padding: 30px;
+            color: #8B95A5;
+            border-top: 2px solid #e0e0e0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🏥 Hero Banner Image Selection</h1>
+            <p>Small Private Practice Page - Medical Futurism Theme</p>
+        </header>
+
+        <div class="specs">
+            <h2>Technical Requirements & Visual Concept</h2>
+            <ul>
+                <li><strong>Target Dimensions:</strong> 1920 × 800 pixels (2.4:1 aspect ratio)</li>
+                <li><strong>File Format:</strong> JPEG or WebP</li>
+                <li><strong>File Size:</strong> 100-200KB (optimized)</li>
+                <li><strong>Primary Subject:</strong> Doctor-centric, solo practitioner</li>
+                <li><strong>Technology Focus:</strong> Practice management software, digital tools</li>
+                <li><strong>Setting:</strong> Modern medical office, organized workspace</li>
+                <li><strong>Mood:</strong> Professional, confident, tech-forward, approachable</li>
+                <li><strong>Color Palette:</strong> Deep teal (#0A4D4E), electric cyan (#00D9FF), warm accents</li>
+                <li><strong>Avoid:</strong> Hospital settings, multiple doctors, generic poses, cluttered spaces</li>
+            </ul>
+        </div>
+
+        <div class="note">
+            <strong>⚠️ Licensing Notice:</strong> All images must be properly licensed for commercial use.
+            Verify usage rights before downloading. Consider using Unsplash, Pexels, or paid stock photo services.
+        </div>
+
+        <!-- HIGH MATCH SECTION -->
+        <section class="match-section">
+            <div class="match-header match-high">
+                <h2>🌟 High Match (Best Candidates)</h2>
+                <p>Images that closely match our requirements for solo practitioner with technology focus</p>
+            </div>
+            <div class="images-grid">
+
+                <div class="image-card">
+                    <div class="image-wrapper">
+                        <img src="https://tateeda.com/wp-content/uploads/2023/04/back-office-software-for-medical-facilties-1024x802.jpg"
+                             alt="Healthcare practice-management system development"
+                             loading="lazy"
+                             onerror="this.parentElement.innerHTML='<div class=\'loading-error\'>Image failed to load</div>'">
+                    </div>
+                    <div class="image-info">
+                        <h3>Healthcare Practice Management System Dashboard</h3>
+                        <div class="image-meta">
+                            <div><strong>Dimensions:</strong> <span class="value">1024 × 802 px</span></div>
+                            <div><strong>Aspect Ratio:</strong> <span class="value">~1.3:1 (needs adjustment)</span></div>
+                            <div><strong>Focus:</strong> <span class="value">Practice management software interface</span></div>
+                            <div><strong>Why It Works:</strong> <span class="value">Shows modern medical dashboard with business metrics, perfect tech-forward narrative</span></div>
+                        </div>
+                        <span class="confidence-badge confidence-low">Low Confidence</span>
+                        <br>
+                        <a href="https://tateeda.com/blog/medical-practice-management-software-development"
+                           class="source-link" target="_blank">View Source</a>
+                    </div>
+                </div>
+
+                <div class="image-card">
+                    <div class="image-wrapper">
+                        <img src="https://img.freepik.com/free-photo/empty-medical-workspace-with-technology_482257-115276.jpg"
+                             alt="Empty medical workspace with technology"
+                             loading="lazy"
+                             onerror="this.parentElement.innerHTML='<div class=\'loading-error\'>Image failed to load</div>'">
+                    </div>
+                    <div class="image-info">
+                        <h3>Empty Medical Workspace with Modern Technology</h3>
+                        <div class="image-meta">
+                            <div><strong>Dimensions:</strong> <span class="value">740 × 493 px</span></div>
+                            <div><strong>Aspect Ratio:</strong> <span class="value">~1.5:1</span></div>
+                            <div><strong>Focus:</strong> <span class="value">Organized workspace, modern equipment</span></div>
+                            <div><strong>Why It Works:</strong> <span class="value">Clean, organized medical office with digital tools visible</span></div>
+                        </div>
+                        <span class="confidence-badge confidence-high">High Confidence</span>
+                        <br>
+                        <a href="https://freepik.com/free-photos-vectors/medical-records"
+                           class="source-link" target="_blank">View Source (Freepik)</a>
+                    </div>
+                </div>
+
+                <div class="image-card">
+                    <div class="image-wrapper">
+                        <img src="https://www.sermo.com/wp-content/uploads/2017/03/shutterstock_123448414-720x405.jpg"
+                             alt="Doctors and nurse at reception desk"
+                             loading="lazy"
+                             onerror="this.parentElement.innerHTML='<div class=\'loading-error\'>Image failed to load</div>'">
+                    </div>
+                    <div class="image-info">
+                        <h3>Small Practice Team Collaboration</h3>
+                        <div class="image-meta">
+                            <div><strong>Dimensions:</strong> <span class="value">720 × 405 px</span></div>
+                            <div><strong>Aspect Ratio:</strong> <span class="value">~1.8:1 (close to target!)</span></div>
+                            <div><strong>Focus:</strong> <span class="value">Small team coordination, reception setting</span></div>
+                            <div><strong>Why It Works:</strong> <span class="value">Wide format, shows practice efficiency and teamwork</span></div>
+                        </div>
+                        <span class="confidence-badge confidence-high">High Confidence</span>
+                        <br>
+                        <a href="https://www.sermo.com/resources/how-to-improve-your-medical-practice-management/"
+                           class="source-link" target="_blank">View Source</a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- MEDIUM MATCH SECTION -->
+        <section class="match-section">
+            <div class="match-header match-medium">
+                <h2>⭐ Medium Match (Good Options)</h2>
+                <p>Images that meet most requirements but may need cropping or adjustments</p>
+            </div>
+            <div class="images-grid">
+
+                <div class="image-card">
+                    <div class="image-wrapper">
+                        <img src="https://carecloud.com/wp-content/uploads/2025/03/doctor-happy02.webp"
+                             alt="Doctor in scrubs with laptop"
+                             loading="lazy"
+                             onerror="this.parentElement.innerHTML='<div class=\'loading-error\'>Image failed to load</div>'">
+                    </div>
+                    <div class="image-info">
+                        <h3>Doctor Working on Laptop in Modern Office</h3>
+                        <div class="image-meta">
+                            <div><strong>Dimensions:</strong> <span class="value">586 × 416 px</span></div>
+                            <div><strong>Aspect Ratio:</strong> <span class="value">~1.4:1</span></div>
+                            <div><strong>Focus:</strong> <span class="value">Solo practitioner, confident smile, modern setting</span></div>
+                            <div><strong>Why It Works:</strong> <span class="value">Approachable professional with technology</span></div>
+                        </div>
+                        <span class="confidence-badge confidence-low">Low Confidence</span>
+                        <br>
+                        <a href="https://www.carecloud.com/practice-management/"
+                           class="source-link" target="_blank">View Source</a>
+                    </div>
+                </div>
+
+                <div class="image-card">
+                    <div class="image-wrapper">
+                        <img src="https://thumbs.dreamstime.com/b/making-advances-medicine-sound-research-portrait-young-doctor-using-digital-tablet-modern-hospital-276542728.jpg"
+                             alt="Young doctor using digital tablet"
+                             loading="lazy"
+                             onerror="this.parentElement.innerHTML='<div class=\'loading-error\'>Image failed to load</div>'">
+                    </div>
+                    <div class="image-info">
+                        <h3>Medical Professional with Digital Tablet</h3>
+                        <div class="image-meta">
+                            <div><strong>Dimensions:</strong> <span class="value">600 × 900 px (portrait!)</span></div>
+                            <div><strong>Aspect Ratio:</strong> <span class="value">0.67:1 (wrong orientation)</span></div>
+                            <div><strong>Focus:</strong> <span class="value">Doctor using tablet, modern hospital</span></div>
+                            <div><strong>Why It Works:</strong> <span class="value">Technology focus, but needs heavy cropping</span></div>
+                        </div>
+                        <span class="confidence-badge confidence-medium">Medium Confidence</span>
+                        <br>
+                        <a href="https://dreamstime.com/photos-images/medicine-tablet-single.html"
+                           class="source-link" target="_blank">View Source (Stock)</a>
+                    </div>
+                </div>
+
+                <div class="image-card">
+                    <div class="image-wrapper">
+                        <img src="https://thumbs.dreamstime.com/b/staying-current-all-things-medicine-portrait-young-doctor-using-digital-tablet-modern-hospital-staying-current-275972120.jpg"
+                             alt="Doctor using digital tablet"
+                             loading="lazy"
+                             onerror="this.parentElement.innerHTML='<div class=\'loading-error\'>Image failed to load</div>'">
+                    </div>
+                    <div class="image-info">
+                        <h3>Staying Current with Medical Technology</h3>
+                        <div class="image-meta">
+                            <div><strong>Dimensions:</strong> <span class="value">800 × 533 px</span></div>
+                            <div><strong>Aspect Ratio:</strong> <span class="value">~1.5:1</span></div>
+                            <div><strong>Focus:</strong> <span class="value">Doctor with tablet in modern environment</span></div>
+                            <div><strong>Why It Works:</strong> <span class="value">Shows tech-forward practitioner</span></div>
+                        </div>
+                        <span class="confidence-badge confidence-medium">Medium Confidence</span>
+                        <br>
+                        <a href="https://dreamstime.com/photos-images/medicine-tablet-single.html"
+                           class="source-link" target="_blank">View Source (Stock)</a>
+                    </div>
+                </div>
+
+                <div class="image-card">
+                    <div class="image-wrapper">
+                        <img src="https://cdn.create.vista.com/api/media/small/411242496/stock-photo-ehr-emr-electronic-health-record-medical-technology-concept"
+                             alt="EHR Electronic health record concept"
+                             loading="lazy"
+                             onerror="this.parentElement.innerHTML='<div class=\'loading-error\'>Image failed to load</div>'">
+                    </div>
+                    <div class="image-info">
+                        <h3>Electronic Health Record Technology Concept</h3>
+                        <div class="image-meta">
+                            <div><strong>Dimensions:</strong> <span class="value">600 × 400 px</span></div>
+                            <div><strong>Aspect Ratio:</strong> <span class="value">1.5:1</span></div>
+                            <div><strong>Focus:</strong> <span class="value">EHR/EMR medical technology</span></div>
+                            <div><strong>Why It Works:</strong> <span class="value">Digital health focus, modern concept</span></div>
+                        </div>
+                        <span class="confidence-badge confidence-medium">Medium Confidence</span>
+                        <br>
+                        <a href="https://create.vista.com/photos/electronic-medical-record"
+                           class="source-link" target="_blank">View Source (Vista Create)</a>
+                    </div>
+                </div>
+
+                <div class="image-card">
+                    <div class="image-wrapper">
+                        <img src="https://prognocis.com/wp-content/uploads/2024/06/senior-male-doctor-with-stethoscope-is-working-on-1024x683.jpeg"
+                             alt="Senior doctor working on EHR"
+                             loading="lazy"
+                             onerror="this.parentElement.innerHTML='<div class=\'loading-error\'>Image failed to load</div>'">
+                    </div>
+                    <div class="image-info">
+                        <h3>Senior Physician with EHR System</h3>
+                        <div class="image-meta">
+                            <div><strong>Dimensions:</strong> <span class="value">1024 × 683 px</span></div>
+                            <div><strong>Aspect Ratio:</strong> <span class="value">~1.5:1</span></div>
+                            <div><strong>Focus:</strong> <span class="value">Experienced doctor, stethoscope, computer work</span></div>
+                            <div><strong>Why It Works:</strong> <span class="value">Professional solo practitioner with technology</span></div>
+                        </div>
+                        <span class="confidence-badge confidence-low">Low Confidence</span>
+                        <br>
+                        <a href="https://prognocis.com/emr-for-solo-practice/"
+                           class="source-link" target="_blank">View Source</a>
+                    </div>
+                </div>
+
+                <div class="image-card">
+                    <div class="image-wrapper">
+                        <img src="https://www.docvilla.com/wp-content/uploads/2024/09/affordable-ehr-for-solo-practice-1024x512.jpg"
+                             alt="EHR for solo practice"
+                             loading="lazy"
+                             onerror="this.parentElement.innerHTML='<div class=\'loading-error\'>Image failed to load</div>'">
+                    </div>
+                    <div class="image-info">
+                        <h3>Affordable EHR for Solo Practice</h3>
+                        <div class="image-meta">
+                            <div><strong>Dimensions:</strong> <span class="value">1024 × 512 px</span></div>
+                            <div><strong>Aspect Ratio:</strong> <span class="value">2:1 (very close!)</span></div>
+                            <div><strong>Focus:</strong> <span class="value">Solo practice EHR systems</span></div>
+                            <div><strong>Why It Works:</strong> <span class="value">Perfect aspect ratio, solo practitioner focus</span></div>
+                        </div>
+                        <span class="confidence-badge confidence-low">Low Confidence</span>
+                        <br>
+                        <a href="https://www.docvilla.com/best-ehr-for-solo-providers-individual-private-practices/"
+                           class="source-link" target="_blank">View Source</a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- LOW MATCH SECTION -->
+        <section class="match-section">
+            <div class="match-header match-low">
+                <h2>💡 Low Match (Alternative Options)</h2>
+                <p>Images with potential but require significant adjustments or don't fully match concept</p>
+            </div>
+            <div class="images-grid">
+
+                <div class="image-card">
+                    <div class="image-wrapper">
+                        <img src="https://www.collaboratemd.com/wp-content/uploads/Medical-office-receptionist-on-phone-at-computer-desk.jpg"
+                             alt="Medical staff scheduling appointments"
+                             loading="lazy"
+                             onerror="this.parentElement.innerHTML='<div class=\'loading-error\'>Image failed to load</div>'">
+                    </div>
+                    <div class="image-info">
+                        <h3>Medical Office Receptionist Scheduling</h3>
+                        <div class="image-meta">
+                            <div><strong>Dimensions:</strong> <span class="value">800 × 420 px</span></div>
+                            <div><strong>Aspect Ratio:</strong> <span class="value">~1.9:1 (close!)</span></div>
+                            <div><strong>Issue:</strong> <span class="value">Receptionist-focused, not doctor-centric</span></div>
+                        </div>
+                        <span class="confidence-badge confidence-low">Low Confidence</span>
+                        <br>
+                        <a href="https://collaboratemd.com/blog/why-practice-management-software-is-a-healthcare-essential"
+                           class="source-link" target="_blank">View Source</a>
+                    </div>
+                </div>
+
+                <div class="image-card">
+                    <div class="image-wrapper">
+                        <img src="https://lirp.cdn-website.com/b9c8e2cb/dms3rep/multi/opt/A+doctor+ponders+on+which+practice+management+software+their+healthcare+practice+can+benefit+from+the+most.-1920w.png"
+                             alt="Doctor considering practice management software"
+                             loading="lazy"
+                             onerror="this.parentElement.innerHTML='<div class=\'loading-error\'>Image failed to load</div>'">
+                    </div>
+                    <div class="image-info">
+                        <h3>Doctor Pondering Practice Management Options</h3>
+                        <div class="image-meta">
+                            <div><strong>Dimensions:</strong> <span class="value">1920 × 1280 px</span></div>
+                            <div><strong>Aspect Ratio:</strong> <span class="value">1.5:1</span></div>
+                            <div><strong>Issue:</strong> <span class="value">Good size but wrong aspect ratio</span></div>
+                        </div>
+                        <span class="confidence-badge confidence-low">Low Confidence</span>
+                        <br>
+                        <a href="https://meditab.com/blog/what-to-look-for-in-modern-practice-management-software"
+                           class="source-link" target="_blank">View Source</a>
+                    </div>
+                </div>
+
+                <div class="image-card">
+                    <div class="image-wrapper">
+                        <img src="https://www.collaboratemd.com/wp-content/uploads/Doctor-using-tablet-1-1024x539.jpg"
+                             alt="Doctor using tablet"
+                             loading="lazy"
+                             onerror="this.parentElement.innerHTML='<div class=\'loading-error\'>Image failed to load</div>'">
+                    </div>
+                    <div class="image-info">
+                        <h3>Physician with Tablet Device</h3>
+                        <div class="image-meta">
+                            <div><strong>Dimensions:</strong> <span class="value">1024 × 539 px</span></div>
+                            <div><strong>Aspect Ratio:</strong> <span class="value">~1.9:1 (close!)</span></div>
+                            <div><strong>Issue:</strong> <span class="value">Generic stock photo feel</span></div>
+                        </div>
+                        <span class="confidence-badge confidence-low">Low Confidence</span>
+                        <br>
+                        <a href="https://collaboratemd.com/blog/why-practice-management-software-is-a-healthcare-essential"
+                           class="source-link" target="_blank">View Source</a>
+                    </div>
+                </div>
+
+                <div class="image-card">
+                    <div class="image-wrapper">
+                        <img src="https://media.gettyimages.com/id/2232241956/photo/female-doctor-using-laptop-in-modern-hospital-setting.jpg"
+                             alt="Female doctor using laptop"
+                             loading="lazy"
+                             onerror="this.parentElement.innerHTML='<div class=\'loading-error\'>Image failed to load</div>'">
+                    </div>
+                    <div class="image-info">
+                        <h3>Female Doctor in Modern Hospital Setting</h3>
+                        <div class="image-meta">
+                            <div><strong>Dimensions:</strong> <span class="value">612 × 408 px</span></div>
+                            <div><strong>Aspect Ratio:</strong> <span class="value">1.5:1</span></div>
+                            <div><strong>Issue:</strong> <span class="value">Hospital setting (not small practice)</span></div>
+                        </div>
+                        <span class="confidence-badge confidence-low">Low Confidence</span>
+                        <br>
+                        <a href="https://gettyimages.com/photos/patient-health-record"
+                           class="source-link" target="_blank">View Source (Getty - Paid)</a>
+                    </div>
+                </div>
+
+                <div class="image-card">
+                    <div class="image-wrapper">
+                        <img src="https://prognocis.com/wp-content/uploads/2023/08/pharmacist-pointing-showing-male-colleague-medication-prices-prescriptions-on-computer-screen.jpg"
+                             alt="Pharmacist with colleague at computer"
+                             loading="lazy"
+                             onerror="this.parentElement.innerHTML='<div class=\'loading-error\'>Image failed to load</div>'">
+                    </div>
+                    <div class="image-info">
+                        <h3>Healthcare Professionals Reviewing System</h3>
+                        <div class="image-meta">
+                            <div><strong>Dimensions:</strong> <span class="value">2000 × 1334 px</span></div>
+                            <div><strong>Aspect Ratio:</strong> <span class="value">1.5:1</span></div>
+                            <div><strong>Issue:</strong> <span class="value">Pharmacy setting, multiple people</span></div>
+                        </div>
+                        <span class="confidence-badge confidence-low">Low Confidence</span>
+                        <br>
+                        <a href="https://prognocis.com/emr-for-solo-practice/"
+                           class="source-link" target="_blank">View Source</a>
+                    </div>
+                </div>
+
+                <div class="image-card">
+                    <div class="image-wrapper">
+                        <img src="https://thumbs.dreamstime.com/b/getting-more-out-medicine-smart-tech-portrait-young-doctor-using-digital-tablet-modern-hospital-getting-more-276542563.jpg"
+                             alt="Doctor with smart tech"
+                             loading="lazy"
+                             onerror="this.parentElement.innerHTML='<div class=\'loading-error\'>Image failed to load</div>'">
+                    </div>
+                    <div class="image-info">
+                        <h3>Young Doctor Using Smart Technology</h3>
+                        <div class="image-meta">
+                            <div><strong>Dimensions:</strong> <span class="value">800 × 533 px</span></div>
+                            <div><strong>Aspect Ratio:</strong> <span class="value">1.5:1</span></div>
+                            <div><strong>Issue:</strong> <span class="value">Stock photo appearance</span></div>
+                        </div>
+                        <span class="confidence-badge confidence-medium">Medium Confidence</span>
+                        <br>
+                        <a href="https://dreamstime.com/photos-images/medicine-tablet-single.html"
+                           class="source-link" target="_blank">View Source (Stock)</a>
+                    </div>
+                </div>
+
+                <div class="image-card">
+                    <div class="image-wrapper">
+                        <img src="https://images.pexels.com/photos/7195369/pexels-photo-7195369.jpeg"
+                             alt="Healthcare professional in scrubs using laptop"
+                             loading="lazy"
+                             onerror="this.parentElement.innerHTML='<div class=\'loading-error\'>Image failed to load</div>'">
+                    </div>
+                    <div class="image-info">
+                        <h3>Healthcare Professional with Laptop (Pexels)</h3>
+                        <div class="image-meta">
+                            <div><strong>Dimensions:</strong> <span class="value">500 × 333 px</span></div>
+                            <div><strong>Aspect Ratio:</strong> <span class="value">1.5:1</span></div>
+                            <div><strong>Why Consider:</strong> <span class="value">FREE license from Pexels!</span></div>
+                        </div>
+                        <span class="confidence-badge confidence-low">Low Confidence</span>
+                        <br>
+                        <a href="https://www.pexels.com/search/medical office/"
+                           class="source-link" target="_blank">View Source (Pexels - FREE)</a>
+                    </div>
+                </div>
+
+                <div class="image-card">
+                    <div class="image-wrapper">
+                        <img src="https://images.unsplash.com/photo-1666886573531-48d2e3c2b684"
+                             alt="Doctor showing patient something on tablet"
+                             loading="lazy"
+                             onerror="this.parentElement.innerHTML='<div class=\'loading-error\'>Image failed to load</div>'">
+                    </div>
+                    <div class="image-info">
+                        <h3>Doctor-Patient Tablet Consultation (Unsplash)</h3>
+                        <div class="image-meta">
+                            <div><strong>Dimensions:</strong> <span class="value">3000 × 2000 px (large!)</span></div>
+                            <div><strong>Aspect Ratio:</strong> <span class="value">1.5:1</span></div>
+                            <div><strong>Why Consider:</strong> <span class="value">FREE license from Unsplash! High resolution</span></div>
+                            <div><strong>Issue:</strong> <span class="value">Patient-focused (not doctor-centric)</span></div>
+                        </div>
+                        <span class="confidence-badge confidence-low">Low Confidence</span>
+                        <br>
+                        <a href="https://unsplash.com/photos/a-doctor-showing-a-patient-something-on-the-tablet-J5UTvRgse7Q"
+                           class="source-link" target="_blank">View Source (Unsplash - FREE)</a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <footer>
+            <p><strong>MediCare Presentation</strong> | Hero Banner Image Selection Tool</p>
+            <p>Review all candidates and select the best match for Small Private Practice page</p>
+            <p style="margin-top: 15px; font-size: 0.9em;">
+                Remember: Verify licensing before download. Consider aspect ratio adjustments needed to reach 2.4:1 (1920×800px)
+            </p>
+        </footer>
+    </div>
+</body>
+</html>

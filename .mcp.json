@@ -1,0 +1,33 @@
+{
+  "$schema": "https://modelcontextprotocol.io/schema/mcp-config.json",
+  "description": "MCP servers for MediCare Backend - Rust API development with HIPAA compliance",
+  "mcpServers": {
+    "memory": {
+      "priority": "essential",
+      "description": "Maintains context and decisions across sessions",
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-memory"],
+      "env": {}
+    },
+    "brave-search": {
+      "priority": "recommended",
+      "description": "Search web and images for presentation content",
+      "command": "npx",
+      "args": ["-y", "@brave/mcp-server-brave-search"],
+      "env": {
+        "BRAVE_API_KEY": "${BRAVE_API_KEY}"
+      },
+      "setupInstructions": "Get your free API key at: https://brave.com/search/api/"
+    },
+    "github": {
+      "priority": "optional",
+      "description": "Manage PRs, issues, and GitHub Actions",
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-github"],
+      "env": {
+        "GITHUB_PERSONAL_ACCESS_TOKEN": "${GITHUB_TOKEN}"
+      },
+      "setupInstructions": "Create a GitHub Personal Access Token at: https://github.com/settings/tokens\nRequired scopes: repo, read:org, read:user"
+    }
+  }
+}

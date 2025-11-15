@@ -151,6 +151,12 @@
     "skip": "تخطي في الوقت الحالي",
     "step1": {
       "indicator": "الخطوة 1 من 2",
+      "title": "اختر لغتك",
+      "subtitle": "اختر لغتك المفضلة للحصول على أفضل تجربة",
+      "continue": "متابعة"
+    },
+    "step2": {
+      "indicator": "الخطوة 2 من 2",
       "title": "من أنت؟",
       "subtitle": "اختر دورك لتخصيص تجربتك",
       "patient": {
@@ -164,24 +170,6 @@
       "clinic": {
         "title": "مستشفى",
         "description": "أمثل عيادة أو مستشفى تبحث عن حلول المؤسسات"
-      },
-      "continue": "متابعة"
-    },
-    "step2": {
-      "indicator": "الخطوة 2 من 2",
-      "title": "اختر لغتك",
-      "subtitle": "اختر لغتك المفضلة للحصول على أفضل تجربة",
-      "en": {
-        "title": "English",
-        "description": "Use the platform in English"
-      },
-      "ro": {
-        "title": "Română",
-        "description": "Folosește platforma în limba română"
-      },
-      "ar": {
-        "title": "العربية",
-        "description": "استخدم المنصة باللغة العربية"
       },
       "back": "رجوع",
       "getStarted": "ابدأ"

@@ -1,38 +1,55 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import { User, Building2, Hospital, Globe, ArrowRight } from "lucide-react";
 import "./Wizard.css";
 
 interface WizardProps {
-  onComplete: (persona: string, language: string) => void;
+  step?: number;
+  language?: string;
+  onLanguageSelect?: (language: string) => void;
+  onPersonaSelect?: (persona: string) => void;
 }
 
-function Wizard({ onComplete }: WizardProps) {
-  const [step, setStep] = useState(1);
+function Wizard({ step = 1, language, onLanguageSelect, onPersonaSelect }: WizardProps) {
+  const { t, i18n } = useTranslation();
+  const navigate = useNavigate();
   const [selectedPersona, setSelectedPersona] = useState<string>("");
   const [selectedLanguage, setSelectedLanguage] = useState<string>("");
+
+  // Initialize i18n with the provided language for step 2
+  useEffect(() => {
+    if (step === 2 && language) {
+      i18n.changeLanguage(language);
+    }
+  }, [step, language, i18n]);
 
   const handlePersonaSelect = (persona: string) => {
     setSelectedPersona(persona);
   };
 
-  const handleLanguageSelect = (language: string) => {
-    setSelectedLanguage(language);
+  const handleLanguageSelect = (lang: string) => {
+    setSelectedLanguage(lang);
   };
 
   const handleNext = () => {
-    if (step === 1 && selectedPersona) {
-      setStep(2);
+    if (step === 1 && selectedLanguage && onLanguageSelect) {
+      onLanguageSelect(selectedLanguage);
     }
   };
 
   const handleComplete = () => {
-    if (selectedPersona && selectedLanguage) {
-      onComplete(selectedPersona, selectedLanguage);
+    if (selectedPersona && onPersonaSelect) {
+      onPersonaSelect(selectedPersona);
     }
   };
 
   const handleSkip = () => {
-    onComplete("patient", "en");
+    navigate("/en/patient");
+  };
+
+  const handleBack = () => {
+    navigate("/");
   };
 
   return (
@@ -50,98 +67,16 @@ function Wizard({ onComplete }: WizardProps) {
             <span className="logo-text">MediCare</span>
           </div>
           <button className="wizard-skip" onClick={handleSkip}>
-            Skip for now
+            {t('wizard.skip')}
           </button>
         </div>
 
         {step === 1 ? (
           <div className="wizard-step fade-in">
-            <div className="wizard-step-indicator">Step 1 of 2</div>
-            <h1 className="wizard-title">Who are you?</h1>
+            <div className="wizard-step-indicator">{t('wizard.step1.indicator')}</div>
+            <h1 className="wizard-title">{t('wizard.step1.title')}</h1>
             <p className="wizard-subtitle">
-              Select your role to personalize your experience
-            </p>
-
-            <div className="wizard-options">
-              <button
-                className={`wizard-option ${
-                  selectedPersona === "patient" ? "selected" : ""
-                }`}
-                onClick={() => handlePersonaSelect("patient")}
-              >
-                <div className="wizard-option-icon">
-                  <User size={40} strokeWidth={1.5} />
-                </div>
-                <div className="wizard-option-content">
-                  <h3 className="wizard-option-title">Patient</h3>
-                  <p className="wizard-option-description">
-                    I'm looking for healthcare management for personal use
-                  </p>
-                </div>
-                <div className="wizard-option-check">
-                  {selectedPersona === "patient" && "✓"}
-                </div>
-              </button>
-
-              <button
-                className={`wizard-option ${
-                  selectedPersona === "practice" ? "selected" : ""
-                }`}
-                onClick={() => handlePersonaSelect("practice")}
-              >
-                <div className="wizard-option-icon">
-                  <Building2 size={40} strokeWidth={1.5} />
-                </div>
-                <div className="wizard-option-content">
-                  <h3 className="wizard-option-title">
-                    Small Private Practice
-                  </h3>
-                  <p className="wizard-option-description">
-                    I run a private practice and need practice management tools
-                  </p>
-                </div>
-                <div className="wizard-option-check">
-                  {selectedPersona === "practice" && "✓"}
-                </div>
-              </button>
-
-              <button
-                className={`wizard-option ${
-                  selectedPersona === "clinic" ? "selected" : ""
-                }`}
-                onClick={() => handlePersonaSelect("clinic")}
-              >
-                <div className="wizard-option-icon">
-                  <Hospital size={40} strokeWidth={1.5} />
-                </div>
-                <div className="wizard-option-content">
-                  <h3 className="wizard-option-title">Clinic</h3>
-                  <p className="wizard-option-description">
-                    I represent a clinic or hospital seeking enterprise
-                    solutions
-                  </p>
-                </div>
-                <div className="wizard-option-check">
-                  {selectedPersona === "clinic" && "✓"}
-                </div>
-              </button>
-            </div>
-
-            <button
-              className="wizard-next-btn"
-              onClick={handleNext}
-              disabled={!selectedPersona}
-            >
-              Continue
-              <ArrowRight size={20} />
-            </button>
-          </div>
-        ) : (
-          <div className="wizard-step fade-in">
-            <div className="wizard-step-indicator">Step 2 of 2</div>
-            <h1 className="wizard-title">Choose your language</h1>
-            <p className="wizard-subtitle">
-              Select your preferred language for the best experience
+              {t('wizard.step1.subtitle')}
             </p>
 
             <div className="wizard-options">
@@ -206,16 +141,97 @@ function Wizard({ onComplete }: WizardProps) {
               </button>
             </div>
 
+            <button
+              className="wizard-next-btn"
+              onClick={handleNext}
+              disabled={!selectedLanguage}
+            >
+              {t('wizard.step1.continue')}
+              <ArrowRight size={20} />
+            </button>
+          </div>
+        ) : (
+          <div className="wizard-step fade-in">
+            <div className="wizard-step-indicator">{t('wizard.step2.indicator')}</div>
+            <h1 className="wizard-title">{t('wizard.step2.title')}</h1>
+            <p className="wizard-subtitle">
+              {t('wizard.step2.subtitle')}
+            </p>
+
+            <div className="wizard-options">
+              <button
+                className={`wizard-option ${
+                  selectedPersona === "patient" ? "selected" : ""
+                }`}
+                onClick={() => handlePersonaSelect("patient")}
+              >
+                <div className="wizard-option-icon">
+                  <User size={40} strokeWidth={1.5} />
+                </div>
+                <div className="wizard-option-content">
+                  <h3 className="wizard-option-title">{t('wizard.step2.patient.title')}</h3>
+                  <p className="wizard-option-description">
+                    {t('wizard.step2.patient.description')}
+                  </p>
+                </div>
+                <div className="wizard-option-check">
+                  {selectedPersona === "patient" && "✓"}
+                </div>
+              </button>
+
+              <button
+                className={`wizard-option ${
+                  selectedPersona === "practice" ? "selected" : ""
+                }`}
+                onClick={() => handlePersonaSelect("practice")}
+              >
+                <div className="wizard-option-icon">
+                  <Building2 size={40} strokeWidth={1.5} />
+                </div>
+                <div className="wizard-option-content">
+                  <h3 className="wizard-option-title">
+                    {t('wizard.step2.practice.title')}
+                  </h3>
+                  <p className="wizard-option-description">
+                    {t('wizard.step2.practice.description')}
+                  </p>
+                </div>
+                <div className="wizard-option-check">
+                  {selectedPersona === "practice" && "✓"}
+                </div>
+              </button>
+
+              <button
+                className={`wizard-option ${
+                  selectedPersona === "clinic" ? "selected" : ""
+                }`}
+                onClick={() => handlePersonaSelect("clinic")}
+              >
+                <div className="wizard-option-icon">
+                  <Hospital size={40} strokeWidth={1.5} />
+                </div>
+                <div className="wizard-option-content">
+                  <h3 className="wizard-option-title">{t('wizard.step2.clinic.title')}</h3>
+                  <p className="wizard-option-description">
+                    {t('wizard.step2.clinic.description')}
+                  </p>
+                </div>
+                <div className="wizard-option-check">
+                  {selectedPersona === "clinic" && "✓"}
+                </div>
+              </button>
+            </div>
+
             <div className="wizard-actions">
-              <button className="wizard-back-btn" onClick={() => setStep(1)}>
-                Back
+              <button className="wizard-back-btn" onClick={handleBack}>
+                {t('wizard.step2.back')}
               </button>
               <button
                 className="wizard-next-btn"
                 onClick={handleComplete}
-                disabled={!selectedLanguage}
+                disabled={!selectedPersona}
               >
-                Get Started
+                {t('wizard.step2.getStarted')}
                 <ArrowRight size={20} />
               </button>
             </div>

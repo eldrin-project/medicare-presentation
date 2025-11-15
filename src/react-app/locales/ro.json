@@ -151,6 +151,12 @@
     "skip": "Sari peste pentru moment",
     "step1": {
       "indicator": "Pasul 1 din 2",
+      "title": "Alege limba ta",
+      "subtitle": "Selectează limba preferată pentru cea mai bună experiență",
+      "continue": "Continuă"
+    },
+    "step2": {
+      "indicator": "Pasul 2 din 2",
       "title": "Cine ești?",
       "subtitle": "Selectează rolul tău pentru a personaliza experiența",
       "patient": {
@@ -164,24 +170,6 @@
       "clinic": {
         "title": "Clinică",
         "description": "Reprezint o clinică sau spital care caută soluții enterprise"
-      },
-      "continue": "Continuă"
-    },
-    "step2": {
-      "indicator": "Pasul 2 din 2",
-      "title": "Alege limba ta",
-      "subtitle": "Selectează limba preferată pentru cea mai bună experiență",
-      "en": {
-        "title": "English",
-        "description": "Use the platform in English"
-      },
-      "ro": {
-        "title": "Română",
-        "description": "Folosește platforma în limba română"
-      },
-      "ar": {
-        "title": "العربية",
-        "description": "استخدم المنصة باللغة العربية"
       },
       "back": "Înapoi",
       "getStarted": "Începe"

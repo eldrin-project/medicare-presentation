@@ -1,11 +1,25 @@
 import { useEffect } from "react";
-import { Routes, Route, Navigate, useNavigate } from "react-router-dom";
+import { Routes, Route, Navigate, useNavigate, useParams } from "react-router-dom";
 import Wizard from "./Wizard";
 import Layout from "./components/Layout";
 import PatientPage from "./pages/PatientPage";
 import PracticePage from "./pages/PracticePage";
 import ClinicPage from "./pages/ClinicPage";
 import "./App.css";
+
+// Persona selection component
+function PersonaSelector() {
+  const { lang } = useParams();
+  const navigate = useNavigate();
+
+  const handlePersonaSelect = (persona: string) => {
+    localStorage.setItem("persona", persona);
+    localStorage.setItem("language", lang || "en");
+    navigate(`/${lang}/${persona}`);
+  };
+
+  return <Wizard step={2} language={lang || "en"} onPersonaSelect={handlePersonaSelect} />;
+}
 
 function App() {
   const navigate = useNavigate();
@@ -22,15 +36,13 @@ function App() {
     }
   }, [navigate]);
 
-  const handleWizardComplete = (persona: string, language: string) => {
-    localStorage.setItem("persona", persona);
-    localStorage.setItem("language", language);
-    navigate(`/${language}/${persona}`);
+  const handleLanguageSelect = (language: string) => {
+    navigate(`/${language}`);
   };
 
   return (
     <Routes>
-      {/* Wizard Route - shown when no preferences */}
+      {/* Step 1: Language Selection */}
       <Route
         path="/"
         element={
@@ -42,9 +54,15 @@ function App() {
               replace
             />
           ) : (
-            <Wizard onComplete={handleWizardComplete} />
+            <Wizard step={1} onLanguageSelect={handleLanguageSelect} />
           )
         }
+      />
+
+      {/* Step 2: Persona Selection at /:lang */}
+      <Route
+        path="/:lang"
+        element={<PersonaSelector />}
       />
 
       {/* Language + Persona Routes */}

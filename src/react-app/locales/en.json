@@ -151,6 +151,12 @@
     "skip": "Skip for now",
     "step1": {
       "indicator": "Step 1 of 2",
+      "title": "Choose your language",
+      "subtitle": "Select your preferred language for the best experience",
+      "continue": "Continue"
+    },
+    "step2": {
+      "indicator": "Step 2 of 2",
       "title": "Who are you?",
       "subtitle": "Select your role to personalize your experience",
       "patient": {
@@ -164,24 +170,6 @@
       "clinic": {
         "title": "Clinic",
         "description": "I represent a clinic or hospital seeking enterprise solutions"
-      },
-      "continue": "Continue"
-    },
-    "step2": {
-      "indicator": "Step 2 of 2",
-      "title": "Choose your language",
-      "subtitle": "Select your preferred language for the best experience",
-      "en": {
-        "title": "English",
-        "description": "Use the platform in English"
-      },
-      "ro": {
-        "title": "Română",
-        "description": "Folosește platforma în limba română"
-      },
-      "ar": {
-        "title": "العربية",
-        "description": "استخدم المنصة باللغة العربية"
       },
       "back": "Back",
       "getStarted": "Get Started"

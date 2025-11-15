@@ -1,0 +1,13 @@
+{
+  "name": "medicare-dev-marketplace",
+  "owner": {
+    "name": "MediCare Team"
+  },
+  "plugins": [
+    {
+      "name": "medicare-copywriter",
+      "source": "./medicare-copywriter",
+      "description": "AI-powered medical marketing copywriter with persona-specific, multilingual content generation for healthcare platforms"
+    }
+  ]
+}
