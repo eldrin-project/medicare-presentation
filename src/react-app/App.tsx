@@ -1,65 +1,81 @@
-// src/App.tsx
-
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
-import cloudflareLogo from "./assets/Cloudflare_Logo.svg";
-import honoLogo from "./assets/hono.svg";
+import { useEffect } from "react";
+import { Routes, Route, Navigate, useNavigate } from "react-router-dom";
+import Wizard from "./Wizard";
+import Layout from "./components/Layout";
+import PatientPage from "./pages/PatientPage";
+import PracticePage from "./pages/PracticePage";
+import ClinicPage from "./pages/ClinicPage";
 import "./App.css";
 
 function App() {
-  const [count, setCount] = useState(0);
-  const [name, setName] = useState("unknown");
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    // Check if user has completed wizard
+    const persona = localStorage.getItem("persona");
+    const language = localStorage.getItem("language");
+
+    // If on root path and no preferences set, stay on root to show wizard
+    // If preferences exist but on root, redirect to saved preferences
+    if (window.location.pathname === "/" && persona && language) {
+      navigate(`/${language}/${persona}`, { replace: true });
+    }
+  }, [navigate]);
+
+  const handleWizardComplete = (persona: string, language: string) => {
+    localStorage.setItem("persona", persona);
+    localStorage.setItem("language", language);
+    navigate(`/${language}/${persona}`);
+  };
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-        <a href="https://hono.dev/" target="_blank">
-          <img src={honoLogo} className="logo cloudflare" alt="Hono logo" />
-        </a>
-        <a href="https://workers.cloudflare.com/" target="_blank">
-          <img
-            src={cloudflareLogo}
-            className="logo cloudflare"
-            alt="Cloudflare logo"
-          />
-        </a>
-      </div>
-      <h1>Vite + React + Hono + Cloudflare</h1>
-      <div className="card">
-        <button
-          onClick={() => setCount((count) => count + 1)}
-          aria-label="increment"
-        >
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <div className="card">
-        <button
-          onClick={() => {
-            fetch("/api/")
-              .then((res) => res.json() as Promise<{ name: string }>)
-              .then((data) => setName(data.name));
-          }}
-          aria-label="get name"
-        >
-          Name from API is: {name}
-        </button>
-        <p>
-          Edit <code>worker/index.ts</code> to change the name
-        </p>
-      </div>
-      <p className="read-the-docs">Click on the logos to learn more</p>
-    </>
+    <Routes>
+      {/* Wizard Route - shown when no preferences */}
+      <Route
+        path="/"
+        element={
+          localStorage.getItem("persona") && localStorage.getItem("language") ? (
+            <Navigate
+              to={`/${localStorage.getItem("language")}/${localStorage.getItem(
+                "persona"
+              )}`}
+              replace
+            />
+          ) : (
+            <Wizard onComplete={handleWizardComplete} />
+          )
+        }
+      />
+
+      {/* Language + Persona Routes */}
+      <Route
+        path="/:lang/patient"
+        element={
+          <Layout>
+            <PatientPage />
+          </Layout>
+        }
+      />
+      <Route
+        path="/:lang/practice"
+        element={
+          <Layout>
+            <PracticePage />
+          </Layout>
+        }
+      />
+      <Route
+        path="/:lang/clinic"
+        element={
+          <Layout>
+            <ClinicPage />
+          </Layout>
+        }
+      />
+
+      {/* Fallback - redirect to wizard if invalid route */}
+      <Route path="*" element={<Navigate to="/" replace />} />
+    </Routes>
   );
 }
 

@@ -1,0 +1,8 @@
+{
+  "name": "medicare-copywriter",
+  "description": "AI-powered medical marketing copywriter with persona-specific, multilingual content generation for healthcare platforms. Supports Patient, Practice, and Clinic personas with Medical Futurism tone.",
+  "version": "1.0.0",
+  "author": {
+    "name": "MediCare Team"
+  }
+}
