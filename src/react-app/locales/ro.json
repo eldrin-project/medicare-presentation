@@ -1,0 +1,200 @@
+{
+  "nav": {
+    "features": "Funcționalități",
+    "solutions": "Soluții",
+    "compliance": "Conformitate",
+    "getStarted": "Începe"
+  },
+  "hero": {
+    "badge": "Programează în 60 de Secunde",
+    "title": "Îngrijire Medicală Adaptată",
+    "titleGradient": "Programului Tău",
+    "subtitle": "Programează consultații, comunică cu medicul, reînnoiește rețetele și accesează dosarul medical—totul de pe telefon. Pentru că timpul tău contează.",
+    "ctaPrimary": "Începe Perioada Gratuită",
+    "ctaSecondary": "Vezi Demo de 1 Min",
+    "stats": {
+      "users": "Pentru Programare",
+      "uptime": "Satisfacție Pacienți",
+      "support": "Disponibil Acum"
+    }
+  },
+  "features": {
+    "badge": "FUNCȚIONALITĂȚI",
+    "title": "Tot Ce Ai Nevoie Într-o Singură Platformă",
+    "subtitle": "Construit de la zero pentru excelență în domeniul medical",
+    "scheduling": {
+      "title": "Programare Inteligentă",
+      "description": "Management de programări bazat pe AI cu notificări automate și optimizare inteligentă a sloturilor."
+    },
+    "security": {
+      "title": "Securitate de Nivel Militar",
+      "description": "Criptare end-to-end, jurnale de audit complete și raportare automată a conformității."
+    },
+    "analytics": {
+      "title": "Analiză Avansată",
+      "description": "Perspective în timp real despre performanța practicii, rezultatele pacienților și eficiența operațională."
+    },
+    "multiPlatform": {
+      "title": "Acces Multi-Platformă",
+      "description": "Aplicații native iOS, Android și web cu sincronizare perfectă între dispozitive."
+    },
+    "telemedicine": {
+      "title": "Telemedicină Pregătită",
+      "description": "Consultații video integrate cu calitate HD, partajare ecran și înregistrare sesiuni."
+    },
+    "integrations": {
+      "title": "Integrări Fără Probleme",
+      "description": "Conectare cu sisteme EHR existente, laboratoare, farmacii și furnizori de asigurări."
+    }
+  },
+  "solutions": {
+    "badge": "SOLUȚII",
+    "title": "Construit Pentru Toți Din Domeniul Medical",
+    "patient": {
+      "title": "Sănătatea Ta, Sub Controlul Tău",
+      "intro": "Gestionează-ți călătoria în sănătate cu o experiență intuitivă, mobile-first.",
+      "features": [
+        "Programează consultații 24/7 cu disponibilitate în timp real",
+        "Accesează istoricul medical complet oricând, oriunde",
+        "Mesagerie securizată cu furnizorii tăi de servicii medicale",
+        "Reînnoirea rețetelor și rezultatele de laborator într-un singur loc",
+        "Consultații video din confortul casei tale"
+      ]
+    },
+    "practice": {
+      "title": "Concentrează-te Pe Ce Contează: Îngrijirea Pacienților",
+      "intro": "Reducă sarcina administrativă și oferă rezultate mai bune cu instrumente inteligente.",
+      "features": [
+        "Note SOAP simplificate cu dictare vocală",
+        "Sugestii de diagnostic asistate de AI și interacțiuni medicamentoase",
+        "Rețete digitale trimise direct la farmacii",
+        "Cronologie cuprinzătoare a pacientului cu toate interacțiunile",
+        "Analiză de performanță și metrici de satisfacție a pacienților"
+      ]
+    },
+    "clinic": {
+      "title": "Scalează-ți Practica Fără Efort",
+      "intro": "Instrumente de nivel enterprise pentru a gestiona operațiunile, personalul și creșterea.",
+      "features": [
+        "Management multi-locație cu control centralizat",
+        "Programarea personalului, permisiuni și urmărirea performanței",
+        "Management al ciclului de venituri și automatizare a facturării",
+        "Managementul inventarului pentru consumabile și medicamente",
+        "Fluxuri de lucru personalizate și raportare automată a conformității"
+      ]
+    }
+  },
+  "compliance": {
+    "badge": "Securitate Enterprise",
+    "badgeSubtitle": "Certificat & Auditat",
+    "title": "Încrederea Ta Este Fundația Noastră",
+    "description": "MediCare îndeplinește cele mai înalte standarde pentru protecția datelor medicale cu conformitate duală GDPR și HIPAA, asigurând securitatea datelor tale indiferent de locație.",
+    "items": {
+      "gdpr": {
+        "label": "Conformitate GDPR",
+        "detail": "Reglementări UE pentru protecția datelor"
+      },
+      "hipaa": {
+        "label": "Certificat HIPAA",
+        "detail": "Standarde SUA pentru confidențialitatea medicală"
+      },
+      "soc2": {
+        "label": "SOC 2 Tip II",
+        "detail": "Securitate auditată independent"
+      },
+      "iso": {
+        "label": "ISO 27001",
+        "detail": "Management al securității informațiilor"
+      }
+    }
+  },
+  "cta": {
+    "title": "Gata Să-ți Transformi Practica?",
+    "subtitle": "Alătură-te miilor de furnizori de servicii medicale care folosesc deja MediCare",
+    "ctaPrimary": "Începe Perioada Ta Gratuită",
+    "ctaSecondary": "Programează un Demo",
+    "note": "Nu este nevoie de card · Perioadă gratuită de 14 zile · Anulează oricând"
+  },
+  "footer": {
+    "tagline": "Management medical de nouă generație pentru ecosistemul medical modern.",
+    "product": {
+      "title": "Produs",
+      "features": "Funcționalități",
+      "solutions": "Soluții",
+      "pricing": "Prețuri",
+      "integrations": "Integrări"
+    },
+    "company": {
+      "title": "Companie",
+      "about": "Despre Noi",
+      "careers": "Cariere",
+      "blog": "Blog",
+      "press": "Kit Presă"
+    },
+    "resources": {
+      "title": "Resurse",
+      "docs": "Documentație",
+      "api": "Referință API",
+      "support": "Suport",
+      "status": "Status Sistem"
+    },
+    "legal": {
+      "title": "Legal",
+      "privacy": "Politica de Confidențialitate",
+      "terms": "Termeni și Condiții",
+      "compliance": "Conformitate",
+      "security": "Securitate"
+    },
+    "copyright": "© 2025 MediCare Platform. Toate drepturile rezervate."
+  },
+  "wizard": {
+    "skip": "Sari peste pentru moment",
+    "step1": {
+      "indicator": "Pasul 1 din 2",
+      "title": "Cine ești?",
+      "subtitle": "Selectează rolul tău pentru a personaliza experiența",
+      "patient": {
+        "title": "Pacient",
+        "description": "Caut management medical pentru uz personal"
+      },
+      "practice": {
+        "title": "Cabinet Privat Mic",
+        "description": "Conduc un cabinet privat și am nevoie de instrumente de management"
+      },
+      "clinic": {
+        "title": "Clinică",
+        "description": "Reprezint o clinică sau spital care caută soluții enterprise"
+      },
+      "continue": "Continuă"
+    },
+    "step2": {
+      "indicator": "Pasul 2 din 2",
+      "title": "Alege limba ta",
+      "subtitle": "Selectează limba preferată pentru cea mai bună experiență",
+      "en": {
+        "title": "English",
+        "description": "Use the platform in English"
+      },
+      "ro": {
+        "title": "Română",
+        "description": "Folosește platforma în limba română"
+      },
+      "ar": {
+        "title": "العربية",
+        "description": "استخدم المنصة باللغة العربية"
+      },
+      "back": "Înapoi",
+      "getStarted": "Începe"
+    }
+  },
+  "personas": {
+    "patient": "Pacient",
+    "practice": "Cabinet Privat",
+    "clinic": "Clinică"
+  },
+  "languages": {
+    "en": "English",
+    "ro": "Română",
+    "ar": "العربية"
+  }
+}

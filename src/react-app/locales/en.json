@@ -1,0 +1,200 @@
+{
+  "nav": {
+    "features": "Features",
+    "solutions": "Solutions",
+    "compliance": "Compliance",
+    "getStarted": "Get Started"
+  },
+  "hero": {
+    "badge": "Book in 60 Seconds",
+    "title": "Healthcare That Fits",
+    "titleGradient": "Your Schedule",
+    "subtitle": "Book appointments, message your doctor, refill prescriptions, and access your health records—all from your phone. Because your time matters.",
+    "ctaPrimary": "Start Free Trial",
+    "ctaSecondary": "Watch 1-Min Demo",
+    "stats": {
+      "users": "To Book Appointment",
+      "uptime": "Patient Satisfaction",
+      "support": "Available Now"
+    }
+  },
+  "features": {
+    "badge": "FEATURES",
+    "title": "Everything You Need in One Platform",
+    "subtitle": "Built from the ground up for healthcare excellence",
+    "scheduling": {
+      "title": "Smart Scheduling",
+      "description": "AI-powered appointment management with automated reminders and intelligent slot optimization."
+    },
+    "security": {
+      "title": "Military-Grade Security",
+      "description": "End-to-end encryption, comprehensive audit logs, and automatic compliance reporting."
+    },
+    "analytics": {
+      "title": "Advanced Analytics",
+      "description": "Real-time insights into practice performance, patient outcomes, and operational efficiency."
+    },
+    "multiPlatform": {
+      "title": "Multi-Platform Access",
+      "description": "Native iOS, Android, and web applications with seamless synchronization across devices."
+    },
+    "telemedicine": {
+      "title": "Telemedicine Ready",
+      "description": "Built-in video consultations with HD quality, screen sharing, and session recording."
+    },
+    "integrations": {
+      "title": "Seamless Integrations",
+      "description": "Connect with existing EHR systems, labs, pharmacies, and insurance providers."
+    }
+  },
+  "solutions": {
+    "badge": "SOLUTIONS",
+    "title": "Built for Everyone in Healthcare",
+    "patient": {
+      "title": "Your Health, Your Control",
+      "intro": "Manage your healthcare journey with an intuitive mobile-first experience.",
+      "features": [
+        "Book appointments 24/7 with real-time availability",
+        "Access your complete medical history anytime, anywhere",
+        "Secure messaging with your healthcare providers",
+        "Prescription refills and lab results in one place",
+        "Video consultations from the comfort of home"
+      ]
+    },
+    "practice": {
+      "title": "Focus on What Matters: Patient Care",
+      "intro": "Reduce administrative burden and deliver better outcomes with intelligent tools.",
+      "features": [
+        "Streamlined SOAP notes with voice dictation",
+        "AI-assisted diagnosis suggestions and drug interactions",
+        "Digital prescriptions sent directly to pharmacies",
+        "Comprehensive patient timeline with all interactions",
+        "Performance analytics and patient satisfaction metrics"
+      ]
+    },
+    "clinic": {
+      "title": "Scale Your Practice Effortlessly",
+      "intro": "Enterprise-grade tools to manage operations, staff, and growth.",
+      "features": [
+        "Multi-location management with centralized control",
+        "Staff scheduling, permissions, and performance tracking",
+        "Revenue cycle management and billing automation",
+        "Inventory management for supplies and medications",
+        "Custom workflows and automated compliance reporting"
+      ]
+    }
+  },
+  "compliance": {
+    "badge": "Enterprise Security",
+    "badgeSubtitle": "Certified & Audited",
+    "title": "Your Trust is Our Foundation",
+    "description": "MediCare meets the highest standards for healthcare data protection with dual GDPR and HIPAA compliance, ensuring your data is secure regardless of your location.",
+    "items": {
+      "gdpr": {
+        "label": "GDPR Compliant",
+        "detail": "EU data protection regulations"
+      },
+      "hipaa": {
+        "label": "HIPAA Certified",
+        "detail": "US healthcare privacy standards"
+      },
+      "soc2": {
+        "label": "SOC 2 Type II",
+        "detail": "Independently audited security"
+      },
+      "iso": {
+        "label": "ISO 27001",
+        "detail": "Information security management"
+      }
+    }
+  },
+  "cta": {
+    "title": "Ready to Transform Your Practice?",
+    "subtitle": "Join thousands of healthcare providers already using MediCare",
+    "ctaPrimary": "Start Your Free Trial",
+    "ctaSecondary": "Schedule a Demo",
+    "note": "No credit card required · 14-day free trial · Cancel anytime"
+  },
+  "footer": {
+    "tagline": "Next-generation healthcare management for the modern medical ecosystem.",
+    "product": {
+      "title": "Product",
+      "features": "Features",
+      "solutions": "Solutions",
+      "pricing": "Pricing",
+      "integrations": "Integrations"
+    },
+    "company": {
+      "title": "Company",
+      "about": "About Us",
+      "careers": "Careers",
+      "blog": "Blog",
+      "press": "Press Kit"
+    },
+    "resources": {
+      "title": "Resources",
+      "docs": "Documentation",
+      "api": "API Reference",
+      "support": "Support",
+      "status": "System Status"
+    },
+    "legal": {
+      "title": "Legal",
+      "privacy": "Privacy Policy",
+      "terms": "Terms of Service",
+      "compliance": "Compliance",
+      "security": "Security"
+    },
+    "copyright": "© 2025 MediCare Platform. All rights reserved."
+  },
+  "wizard": {
+    "skip": "Skip for now",
+    "step1": {
+      "indicator": "Step 1 of 2",
+      "title": "Who are you?",
+      "subtitle": "Select your role to personalize your experience",
+      "patient": {
+        "title": "Patient",
+        "description": "I'm looking for healthcare management for personal use"
+      },
+      "practice": {
+        "title": "Small Private Practice",
+        "description": "I run a private practice and need practice management tools"
+      },
+      "clinic": {
+        "title": "Clinic",
+        "description": "I represent a clinic or hospital seeking enterprise solutions"
+      },
+      "continue": "Continue"
+    },
+    "step2": {
+      "indicator": "Step 2 of 2",
+      "title": "Choose your language",
+      "subtitle": "Select your preferred language for the best experience",
+      "en": {
+        "title": "English",
+        "description": "Use the platform in English"
+      },
+      "ro": {
+        "title": "Română",
+        "description": "Folosește platforma în limba română"
+      },
+      "ar": {
+        "title": "العربية",
+        "description": "استخدم المنصة باللغة العربية"
+      },
+      "back": "Back",
+      "getStarted": "Get Started"
+    }
+  },
+  "personas": {
+    "patient": "Patient",
+    "practice": "Private Practice",
+    "clinic": "Clinic"
+  },
+  "languages": {
+    "en": "English",
+    "ro": "Română",
+    "ar": "العربية"
+  }
+}
