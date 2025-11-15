@@ -41,10 +41,15 @@ function PatientPage() {
             {t('hero.subtitle')}
           </p>
           <div className="hero-ctas">
-            <button className="btn btn-primary">
+            <a
+              href="https://staging-medicare.eldrin.io/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn btn-primary"
+            >
               {t('hero.ctaPrimary')}
               <span className="btn-icon">→</span>
-            </button>
+            </a>
             <button className="btn btn-secondary">
               {t('hero.ctaSecondary')}
               <span className="btn-icon">▶</span>
@@ -52,16 +57,16 @@ function PatientPage() {
           </div>
           <div className="hero-stats">
             <div className="stat">
-              <div className="stat-number">50K+</div>
-              <div className="stat-label">{t('hero.stats.users')}</div>
+              <div className="stat-number">{t('hero.stats.launchQuarter')}</div>
+              <div className="stat-label">{t('hero.stats.launchLabel')}</div>
             </div>
             <div className="stat">
-              <div className="stat-number">99.9%</div>
-              <div className="stat-label">{t('hero.stats.uptime')}</div>
+              <div className="stat-number">{t('hero.stats.demoAvailable')}</div>
+              <div className="stat-label">{t('hero.stats.demoLabel')}</div>
             </div>
             <div className="stat">
-              <div className="stat-number">24/7</div>
-              <div className="stat-label">{t('hero.stats.support')}</div>
+              <div className="stat-number">{t('hero.stats.earlyAccessStatus')}</div>
+              <div className="stat-label">{t('hero.stats.earlyAccessLabel')}</div>
             </div>
           </div>
         </div>
@@ -227,10 +232,15 @@ function PatientPage() {
             {t('cta.subtitle')}
           </p>
           <div className="cta-buttons">
-            <button className="btn btn-primary btn-large">
+            <a
+              href="https://staging-medicare.eldrin.io/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn btn-primary btn-large"
+            >
               {t('cta.ctaPrimary')}
               <span className="btn-icon">→</span>
-            </button>
+            </a>
             <button className="btn btn-secondary btn-large">
               {t('cta.ctaSecondary')}
             </button>

@@ -212,35 +212,33 @@ function Layout({ children }: LayoutProps) {
               </div>
               <p className="footer-tagline">{t("footer.tagline")}</p>
             </div>
-            <div className="footer-links">
-              <div className="footer-column">
-                <h4>{t("footer.product.title")}</h4>
-                <a href="#features">{t("footer.product.features")}</a>
-                <a href="#solutions">{t("footer.product.solutions")}</a>
-                <a href="#pricing">{t("footer.product.pricing")}</a>
-                <a href="#integrations">{t("footer.product.integrations")}</a>
-              </div>
-              <div className="footer-column">
-                <h4>{t("footer.company.title")}</h4>
-                <a href="#about">{t("footer.company.about")}</a>
-                <a href="#careers">{t("footer.company.careers")}</a>
-                <a href="#blog">{t("footer.company.blog")}</a>
-                <a href="#press">{t("footer.company.press")}</a>
-              </div>
-              <div className="footer-column">
-                <h4>{t("footer.resources.title")}</h4>
-                <a href="#docs">{t("footer.resources.docs")}</a>
-                <a href="#api">{t("footer.resources.api")}</a>
-                <a href="#support">{t("footer.resources.support")}</a>
-                <a href="#status">{t("footer.resources.status")}</a>
-              </div>
-              <div className="footer-column">
-                <h4>{t("footer.legal.title")}</h4>
-                <a href="#privacy">{t("footer.legal.privacy")}</a>
-                <a href="#terms">{t("footer.legal.terms")}</a>
-                <a href="#compliance">{t("footer.legal.compliance")}</a>
-                <a href="#security">{t("footer.legal.security")}</a>
-              </div>
+            <div className="footer-column">
+              <h4>{t("footer.product.title")}</h4>
+              <a href="#features">{t("footer.product.features")}</a>
+              <a href="#solutions">{t("footer.product.solutions")}</a>
+              <a href="#pricing">{t("footer.product.pricing")}</a>
+              <a href="#integrations">{t("footer.product.integrations")}</a>
+            </div>
+            <div className="footer-column">
+              <h4>{t("footer.company.title")}</h4>
+              <a href="#about">{t("footer.company.about")}</a>
+              <a href="#careers">{t("footer.company.careers")}</a>
+              <a href="#blog">{t("footer.company.blog")}</a>
+              <a href="#press">{t("footer.company.press")}</a>
+            </div>
+            <div className="footer-column">
+              <h4>{t("footer.resources.title")}</h4>
+              <a href="#docs">{t("footer.resources.docs")}</a>
+              <a href="#api">{t("footer.resources.api")}</a>
+              <a href="#support">{t("footer.resources.support")}</a>
+              <a href="#status">{t("footer.resources.status")}</a>
+            </div>
+            <div className="footer-column">
+              <h4>{t("footer.legal.title")}</h4>
+              <a href="#privacy">{t("footer.legal.privacy")}</a>
+              <a href="#terms">{t("footer.legal.terms")}</a>
+              <a href="#compliance">{t("footer.legal.compliance")}</a>
+              <a href="#security">{t("footer.legal.security")}</a>
             </div>
           </div>
           <div className="footer-bottom">
