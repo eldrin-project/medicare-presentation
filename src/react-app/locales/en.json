@@ -5,121 +5,254 @@
     "compliance": "Compliance",
     "getStarted": "Get Started"
   },
-  "hero": {
-    "badge": "Coming Soon – Get Early Access",
-    "title": "Your Health Shouldn't Wait",
-    "titleGradient": "For Anything",
-    "subtitle": "We're building the healthcare platform you've been waiting for. Skip the phone tag, waiting rooms, and appointment hassles. Book visits, message your doctor, get prescriptions, and access your records—all from your phone.",
-    "ctaPrimary": "Try the Demo",
-    "ctaSecondary": "Get Early Access",
-    "stats": {
-      "launchLabel": "Launching",
-      "demoLabel": "Live Demo Available",
-      "earlyAccessLabel": "Early Access Program",
-      "launchQuarter": "Q3 2026",
-      "demoAvailable": "Now",
-      "earlyAccessStatus": "Open"
-    }
-  },
-  "features": {
-    "badge": "WHAT WE'RE BUILDING",
-    "title": "Healthcare That Works Around You",
-    "subtitle": "Everything you need to take control of your health—no medical degree required. Join us as we transform patient care.",
-    "scheduling": {
-      "title": "Book Appointments Instantly",
-      "description": "See your doctor's real-time availability and book appointments in seconds—no phone calls, no waiting on hold. Get reminders so you never miss a visit."
-    },
-    "security": {
-      "title": "Your Health Data, Protected",
-      "description": "Your medical information is encrypted and secure. Only you and your authorized doctors can access your records—guaranteed."
-    },
-    "analytics": {
-      "title": "Advanced Analytics",
-      "description": "Real-time insights into practice performance, patient outcomes, and operational efficiency."
-    },
-    "multiPlatform": {
-      "title": "Access Anywhere, Anytime",
-      "description": "Whether you're on your phone, tablet, or computer, your health information syncs automatically. Check results on your couch or book appointments on the go."
-    },
-    "telemedicine": {
-      "title": "Doctor Visits from Your Couch",
-      "description": "Skip the waiting room. Get face-to-face care through secure video calls—perfect for follow-ups, prescriptions, or when you just don't feel like leaving home."
-    },
-    "integrations": {
-      "title": "Seamless Integrations",
-      "description": "Connect with existing EHR systems, labs, pharmacies, and insurance providers."
-    }
-  },
-  "solutions": {
-    "badge": "BUILT FOR PATIENTS",
-    "title": "Built for Everyone in Healthcare",
-    "patient": {
-      "title": "Take Control of Your Healthcare Journey",
-      "intro": "We're building a platform that puts everything you need in one place—so you can spend less time managing healthcare and more time living your life. Be among the first to experience the future of patient care.",
-      "features": [
-        "Book appointments in 60 seconds—see real-time availability and secure your slot instantly, no phone tag required",
-        "Your entire health history, organized—medical records, test results, and visit notes all in one secure place you can access anytime",
-        "Message your doctor like texting a friend—ask questions, request refills, or get advice through secure chat, no waiting for callbacks",
-        "Prescriptions sent straight to your pharmacy—get refills approved and sent to your preferred pharmacy with one tap",
-        "Video visits when you need them—see your doctor face-to-face from home for routine care, follow-ups, or urgent concerns"
-      ]
-    },
-    "practice": {
-      "title": "Focus on What Matters: Patient Care",
-      "intro": "Reduce administrative burden and deliver better outcomes with intelligent tools.",
-      "features": [
-        "Streamlined SOAP notes with voice dictation",
-        "AI-assisted diagnosis suggestions and drug interactions",
-        "Digital prescriptions sent directly to pharmacies",
-        "Comprehensive patient timeline with all interactions",
-        "Performance analytics and patient satisfaction metrics"
-      ]
-    },
-    "clinic": {
-      "title": "Scale Your Practice Effortlessly",
-      "intro": "Enterprise-grade tools to manage operations, staff, and growth.",
-      "features": [
-        "Multi-location management with centralized control",
-        "Staff scheduling, permissions, and performance tracking",
-        "Revenue cycle management and billing automation",
-        "Inventory management for supplies and medications",
-        "Custom workflows and automated compliance reporting"
-      ]
-    }
-  },
-  "compliance": {
-    "badge": "Your Privacy, Protected",
-    "badgeSubtitle": "Certified & Audited",
-    "title": "We Guard Your Health Data Like It's Our Own",
-    "description": "Your health information is personal, and we treat it that way. MediCare meets the strictest global standards for healthcare data protection—so whether you're in New York or Berlin, your data stays private, secure, and always under your control.",
-    "items": {
-      "gdpr": {
-        "label": "GDPR Compliant",
-        "detail": "European privacy protection"
-      },
-      "hipaa": {
-        "label": "HIPAA Certified",
-        "detail": "US healthcare standards"
-      },
-      "soc2": {
-        "label": "SOC 2 Type II",
-        "detail": "Third-party security audits"
-      },
-      "iso": {
-        "label": "ISO 27001",
-        "detail": "Global security certification"
+  "patient": {
+    "hero": {
+      "badge": "Coming Soon – Get Early Access",
+      "title": "Your Health Shouldn't Wait",
+      "titleGradient": "For Anything",
+      "subtitle": "We're building the healthcare platform you've been waiting for. Skip the phone tag, waiting rooms, and appointment hassles. Book visits, message your doctor, get prescriptions, and access your records - all from your phone.",
+      "ctaPrimary": "Try the Demo",
+      "ctaSecondary": "Get Early Access",
+      "stats": {
+        "launchLabel": "Launching",
+        "demoLabel": "Live Demo Available",
+        "earlyAccessLabel": "Early Access Program",
+        "launchQuarter": "Q3 2026",
+        "demoAvailable": "Now",
+        "earlyAccessStatus": "Open"
       }
+    },
+    "features": {
+      "badge": "WHAT WE'RE BUILDING",
+      "title": "Healthcare That Works Around You",
+      "subtitle": "Everything you need to take control of your health - no medical degree required. Join us as we transform patient care.",
+      "scheduling": {
+        "title": "Book Appointments Instantly",
+        "description": "See your doctor's real-time availability and book appointments in seconds - no phone calls, no waiting on hold. Get reminders so you never miss a visit."
+      },
+      "security": {
+        "title": "Your Health Data, Protected",
+        "description": "Your medical information is encrypted and secure. Only you and your authorized doctors can access your records - guaranteed."
+      },
+      "multiPlatform": {
+        "title": "Access Anywhere, Anytime",
+        "description": "Whether you're on your phone, tablet, or computer, your health information syncs automatically. Check results on your couch or book appointments on the go."
+      },
+      "telemedicine": {
+        "title": "Doctor Visits from Your Couch",
+        "description": "Skip the waiting room. Get face-to-face care through secure video calls - perfect for follow-ups, prescriptions, or when you just don't feel like leaving home."
+      }
+    },
+    "solutions": {
+      "badge": "BUILT FOR PATIENTS",
+      "title": "Take Control of Your Healthcare Journey",
+      "intro": "We're building a platform that puts everything you need in one place - so you can spend less time managing healthcare and more time living your life. Be among the first to experience the future of patient care.",
+      "features": [
+        "Book appointments in 60 seconds - see real-time availability and secure your slot instantly, no phone tag required",
+        "Your entire health history, organized - medical records, test results, and visit notes all in one secure place you can access anytime",
+        "Message your doctor like texting a friend - ask questions, request refills, or get advice through secure chat, no waiting for callbacks",
+        "Prescriptions sent straight to your pharmacy - get refills approved and sent to your preferred pharmacy with one tap",
+        "Video visits when you need them - see your doctor face-to-face from home for routine care, follow-ups, or urgent concerns"
+      ]
+    },
+    "compliance": {
+      "badge": "Your Privacy, Protected",
+      "badgeSubtitle": "Certified & Audited",
+      "title": "We Guard Your Health Data Like It's Our Own",
+      "description": "Your health information is personal, and we treat it that way. MediCare meets the strictest global standards for healthcare data protection - so whether you're in New York or Berlin, your data stays private, secure, and always under your control.",
+      "items": {
+        "gdpr": {
+          "label": "GDPR Compliant",
+          "detail": "European privacy protection"
+        },
+        "hipaa": {
+          "label": "HIPAA Certified",
+          "detail": "US healthcare standards"
+        },
+        "soc2": {
+          "label": "SOC 2 Type II",
+          "detail": "Third-party security audits"
+        },
+        "iso": {
+          "label": "ISO 27001",
+          "detail": "Global security certification"
+        }
+      }
+    },
+    "cta": {
+      "title": "Ready to Experience Healthcare Differently?",
+      "subtitle": "Join the waitlist and be among the first to access MediCare when we launch",
+      "ctaPrimary": "Try the Demo",
+      "ctaSecondary": "Join the Waitlist",
+      "note": "Early access available soon · No credit card required · Get launch notifications"
     }
   },
-  "cta": {
-    "title": "Ready to Experience Healthcare Differently?",
-    "subtitle": "Join the waitlist and be among the first to access MediCare when we launch",
-    "ctaPrimary": "Try the Demo",
-    "ctaSecondary": "Join the Waitlist",
-    "note": "Early access available soon · No credit card required · Get launch notifications"
+  "practice": {
+    "hero": {
+      "badge": "Coming Soon – Transform Your Practice",
+      "title": "Your Patients Need You,",
+      "titleGradient": "Not Paperwork",
+      "subtitle": "We're building the practice management platform that lets you focus on patients, not paperwork. Streamline scheduling, automate billing, and give yourself the tools you need - so you can run a thriving practice without the administrative headaches.",
+      "ctaPrimary": "See the Demo",
+      "ctaSecondary": "Join Early Access",
+      "stats": {
+        "launchLabel": "Launching",
+        "practicesLabel": "Beta Practices",
+        "supportLabel": "Physician Support",
+        "launchQuarter": "Q3 2026",
+        "betaPractices": "50+",
+        "support": "24/7"
+      }
+    },
+    "features": {
+      "badge": "WHAT WE'RE BUILDING",
+      "title": "Practice Management That Actually Works",
+      "subtitle": "Everything you need to run a successful practice—no complexity, no compromise. Built by physicians, for physicians.",
+      "scheduling": {
+        "title": "Smart Scheduling That Actually Works",
+        "description": "Real-time calendar syncing across all providers. No more double-bookings, no more phone tag, no more scheduling chaos. Book appointments in seconds and get automatic reminders."
+      },
+      "security": {
+        "title": "Security You Can Sleep Easy About",
+        "description": "HIPAA-certified, GDPR-ready encryption protecting every piece of patient data. Role-based access controls mean only authorized personnel see sensitive information - guaranteed."
+      },
+      "multiPlatform": {
+        "title": "Run Your Practice From Anywhere",
+        "description": "Whether you're on your phone, tablet, or computer, everything syncs automatically. Check schedules from home, approve prescriptions on the go, or review performance from your office."
+      },
+      "telemedicine": {
+        "title": "Built-In Telemedicine, Zero Setup",
+        "description": "Secure video consultations built right in. See more patients, offer flexible hours, and reduce no-shows - all without extra software or complicated setup."
+      }
+    },
+    "solutions": {
+      "badge": "BUILT FOR PRACTICES",
+      "title": "Focus on What Matters: Patient Care",
+      "intro": "We're building a platform that handles the administrative burden so you can focus on what you do best: caring for patients. Join forward-thinking physicians transforming their practice operations.",
+      "features": [
+        "Streamlined SOAP notes with voice dictation - document visits in half the time while maintaining thorough records",
+        "AI-assisted diagnosis suggestions and drug interactions - get real-time alerts for potential interactions and treatment alternatives",
+        "Digital prescriptions sent directly to pharmacies - no more phone calls, faxes, or patient trips to pick up paper scripts",
+        "Comprehensive patient timeline with all interactions - see every visit, message, and prescription in one chronological view",
+        "Performance analytics and patient satisfaction metrics - track your practice's health with actionable insights and trend analysis"
+      ]
+    },
+    "compliance": {
+      "badge": "Your Patients' Privacy, Protected",
+      "badgeSubtitle": "Certified & Audited",
+      "title": "We Guard Patient Data Like You Do",
+      "description": "Your patients trust you with their health information, and we take that responsibility seriously. MediCare meets the strictest global standards for healthcare data protection - so whether you're treating patients in your community or across state lines, their data stays private, secure, and always compliant.",
+      "items": {
+        "gdpr": {
+          "label": "GDPR Compliant",
+          "detail": "European privacy protection"
+        },
+        "hipaa": {
+          "label": "HIPAA Certified",
+          "detail": "US healthcare standards"
+        },
+        "soc2": {
+          "label": "SOC 2 Type II",
+          "detail": "Third-party security audits"
+        },
+        "iso": {
+          "label": "ISO 27001",
+          "detail": "Global security certification"
+        }
+      }
+    },
+    "cta": {
+      "title": "Ready to Reclaim Your Time and Focus on Patients?",
+      "subtitle": "Join leading practices transforming how they deliver care. Get early access to the platform designed with physicians in mind.",
+      "ctaPrimary": "See the Demo",
+      "ctaSecondary": "Join the Waitlist",
+      "note": "Early access for practice partners · Free onboarding support · Launch Q3 2026"
+    }
+  },
+  "clinic": {
+    "hero": {
+      "badge": "Coming Soon – Transform Your Organization",
+      "title": "Healthcare Delivery at Scale",
+      "titleGradient": "Made Simple",
+      "subtitle": "We're building the enterprise healthcare platform that lets your clinical teams focus on patient outcomes, not administrative overhead. Eliminate operational complexity across all locations, streamline multi-site workflows, and give your organization the tools needed to deliver exceptional care at scale.",
+      "ctaPrimary": "See the Demo",
+      "ctaSecondary": "Join Early Access",
+      "stats": {
+        "launchLabel": "Launching",
+        "demoLabel": "Live Demo Available",
+        "earlyAccessLabel": "Early Access Program",
+        "launchQuarter": "Q3 2026",
+        "demoAvailable": "Now",
+        "earlyAccessStatus": "Open"
+      }
+    },
+    "features": {
+      "badge": "WHAT WE'RE BUILDING",
+      "title": "Enterprise Platform Built for Healthcare at Scale",
+      "subtitle": "Everything your organization needs to deliver exceptional care across all locations—unified operations, measurable outcomes, superior patient experience.",
+      "scheduling": {
+        "title": "Smart Scheduling That Actually Works",
+        "description": "Real-time calendar syncing across all providers and locations. No more double-bookings, no more phone tag, no more scheduling chaos. Book appointments in seconds and get automatic reminders."
+      },
+      "security": {
+        "title": "Security You Can Sleep Easy About",
+        "description": "HIPAA-certified, GDPR-ready encryption protecting every piece of patient data. Role-based access controls mean only authorized personnel see sensitive information - guaranteed."
+      },
+      "multiPlatform": {
+        "title": "Enterprise Command Center, Anywhere",
+        "description": "Unified dashboard for executives and department heads across all devices. Monitor multi-location performance, track organizational KPIs, and make data-driven decisions from anywhere with real-time insights."
+      },
+      "telemedicine": {
+        "title": "Built-In Telemedicine, Zero Setup",
+        "description": "Secure video consultations built right in. See more patients, offer flexible hours, and reduce no-shows - all without extra software or complicated setup."
+      }
+    },
+    "solutions": {
+      "badge": "BUILT FOR HEALTHCARE ORGANIZATIONS",
+      "title": "Transform Operations, Elevate Patient Care",
+      "intro": "We're building an enterprise platform that eliminates administrative complexity so your clinical teams can focus on what matters most: delivering superior patient outcomes. Be among the first health systems to experience the future of healthcare operations at scale.",
+      "features": [
+        "Manage every location from one dashboard - see real-time performance across all your sites, monitor staff utilization, and spot bottlenecks before they become problems",
+        "Your entire organization at a glance - patient volume, revenue trends, staff schedules, and inventory levels all in one secure place you can access from anywhere",
+        "Automate the billing headaches - claims submission, payment tracking, and revenue cycle management handled automatically, so your admin team stops chasing paperwork and starts focusing on patient experience",
+        "Never run out of critical supplies - smart inventory alerts notify you before you're out of stock, with automatic reordering for essential medications and supplies",
+        "Custom workflows that fit how you work - configure approval processes, automate compliance reporting, and set up role-based permissions exactly how your organization needs them"
+      ]
+    },
+    "compliance": {
+      "badge": "Your Patients' Privacy, Protected",
+      "badgeSubtitle": "Certified & Audited",
+      "title": "We Guard Patient Data Like You Do",
+      "description": "Your patients trust you with their health information, and we take that responsibility seriously. MediCare meets the strictest global standards for healthcare data protection - so whether you're treating patients in Boston or running multiple locations across Europe, their data stays private, secure, and always compliant.",
+      "items": {
+        "gdpr": {
+          "label": "GDPR Compliant",
+          "detail": "European privacy protection"
+        },
+        "hipaa": {
+          "label": "HIPAA Certified",
+          "detail": "US healthcare standards"
+        },
+        "soc2": {
+          "label": "SOC 2 Type II",
+          "detail": "Third-party security audits"
+        },
+        "iso": {
+          "label": "ISO 27001",
+          "detail": "Global security certification"
+        }
+      }
+    },
+    "cta": {
+      "title": "Ready to Transform Healthcare Delivery at Scale?",
+      "subtitle": "Join leading health systems transforming how they operate and deliver care. Get early access to the enterprise platform built for your organization.",
+      "ctaPrimary": "See the Demo",
+      "ctaSecondary": "Join the Waitlist",
+      "note": "Early access for clinic partners · Implementation support included · Launch Q3 2026"
+    }
   },
   "footer": {
-    "tagline": "Healthcare that puts you in control. Access your doctors, manage appointments, and take charge of your health—anytime, anywhere.",
+    "tagline": "Healthcare that puts you in control. Access your doctors, manage appointments, and take charge of your health - anytime, anywhere.",
     "product": {
       "title": "Product",
       "features": "Features",

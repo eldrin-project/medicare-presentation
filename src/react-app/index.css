@@ -1,2 +1,154 @@
-/* Global styles are handled in App.css */
-/* This file is kept for potential global overrides */
+/* Import distinctive fonts */
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Manrope:wght@400;500;600;700&display=swap');
+
+@import "tailwindcss";
+
+:root {
+  /* Medical Futurism Color Palette */
+  --color-primary: 10 77 78; /* #0A4D4E - Deep Teal */
+  --color-primary-dark: 8 61 62; /* #083D3E */
+  --color-primary-light: 12 93 94; /* #0C5D5E */
+
+  --color-accent: 0 217 255; /* #00D9FF - Electric Cyan */
+  --color-accent-light: 94 238 255; /* #5EEEFF */
+  --color-accent-dark: 0 184 212; /* #00B8D4 */
+
+  --color-coral: 255 107 107; /* #FF6B6B - Warm accent */
+  --color-coral-light: 255 133 133; /* #FF8585 */
+  --color-coral-dark: 229 82 82; /* #E55252 */
+
+  --color-navy: 15 20 25; /* #0F1419 - Dark backgrounds */
+  --color-navy-light: 26 32 40; /* #1A2028 */
+
+  --radius: 0.5rem;
+
+  /* Fonts */
+  --font-display: 'Sora', sans-serif;
+  --font-body: 'Manrope', sans-serif;
+}
+
+@theme inline {
+  /* Primary Colors */
+  --color-primary: rgb(var(--color-primary));
+  --color-primary-dark: rgb(var(--color-primary-dark));
+  --color-primary-light: rgb(var(--color-primary-light));
+
+  /* Accent Colors */
+  --color-accent: rgb(var(--color-accent));
+  --color-accent-light: rgb(var(--color-accent-light));
+  --color-accent-dark: rgb(var(--color-accent-dark));
+
+  /* Coral Colors */
+  --color-coral: rgb(var(--color-coral));
+  --color-coral-light: rgb(var(--color-coral-light));
+  --color-coral-dark: rgb(var(--color-coral-dark));
+
+  /* Navy Colors */
+  --color-navy: rgb(var(--color-navy));
+  --color-navy-light: rgb(var(--color-navy-light));
+
+  /* Radius */
+  --radius-sm: calc(var(--radius) - 0.25rem);
+  --radius-md: var(--radius);
+  --radius-lg: calc(var(--radius) + 0.25rem);
+  --radius-xl: calc(var(--radius) + 0.5rem);
+
+  /* Gradients - defined as custom properties for use in styles */
+  --gradient-primary: linear-gradient(135deg, rgb(var(--color-accent)) 0%, rgb(var(--color-primary)) 100%);
+  --gradient-accent: linear-gradient(to right, rgb(var(--color-accent)), rgb(var(--color-accent-light)));
+  --gradient-hero: linear-gradient(135deg, rgba(var(--color-accent), 0.1) 0%, rgba(var(--color-primary), 0.1) 100%);
+}
+
+@layer base {
+  * {
+    border-color: hsl(0 0% 90%);
+  }
+
+  body {
+    background-color: #FAFAF9;
+    color: #0F1419;
+    font-family: var(--font-body);
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  input:focus {
+    outline: none;
+  }
+}
+
+/* Critical Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.6;
+    transform: scale(1.2);
+  }
+}
+
+@keyframes slowZoom {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.05);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 1s ease-out;
+}
+
+.animate-fade-in-down {
+  animation: fadeInDown 0.3s ease-out;
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.6s ease-out;
+}
+
+.animate-pulse-slow {
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.animate-slow-zoom {
+  animation: slowZoom 20s ease-in-out infinite alternate;
+}

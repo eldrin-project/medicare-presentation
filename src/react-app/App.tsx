@@ -5,7 +5,6 @@ import Layout from "./components/Layout";
 import PatientPage from "./pages/PatientPage";
 import PracticePage from "./pages/PracticePage";
 import ClinicPage from "./pages/ClinicPage";
-import "./App.css";
 
 // Persona selection component
 function PersonaSelector() {
