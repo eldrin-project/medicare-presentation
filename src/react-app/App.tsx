@@ -20,6 +20,27 @@ function PersonaSelector() {
   return <Wizard step={2} language={lang || "en"} onPersonaSelect={handlePersonaSelect} />;
 }
 
+// Dynamic persona page component
+function PersonaPage() {
+  const { persona } = useParams<{ persona: string }>();
+
+  // Render the appropriate page based on persona
+  const renderPage = () => {
+    switch (persona) {
+      case "patient":
+        return <PatientPage />;
+      case "practice":
+        return <PracticePage />;
+      case "clinic":
+        return <ClinicPage />;
+      default:
+        return <Navigate to="/" replace />;
+    }
+  };
+
+  return <Layout>{renderPage()}</Layout>;
+}
+
 function App() {
   const navigate = useNavigate();
 
@@ -65,30 +86,7 @@ function App() {
       />
 
       {/* Language + Persona Routes */}
-      <Route
-        path="/:lang/patient"
-        element={
-          <Layout>
-            <PatientPage />
-          </Layout>
-        }
-      />
-      <Route
-        path="/:lang/practice"
-        element={
-          <Layout>
-            <PracticePage />
-          </Layout>
-        }
-      />
-      <Route
-        path="/:lang/clinic"
-        element={
-          <Layout>
-            <ClinicPage />
-          </Layout>
-        }
-      />
+      <Route path="/:lang/:persona" element={<PersonaPage />} />
 
       {/* Fallback - redirect to wizard if invalid route */}
       <Route path="*" element={<Navigate to="/" replace />} />

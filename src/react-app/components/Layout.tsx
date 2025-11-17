@@ -138,21 +138,33 @@ function Layout({ children }: LayoutProps) {
                 {showPersonaMenu && (
                   <div className="absolute top-[calc(100%+0.5rem)] left-0 bg-white border border-[#0D6A6C]/10 rounded-2xl shadow-[0_12px_48px_rgba(0,0,0,0.16)] min-w-[200px] z-[1000] overflow-hidden animate-fade-in-down">
                     <button
-                      className="flex items-center gap-3 w-full font-[family-name:var(--font-body)] font-medium text-[0.95rem] text-navy bg-transparent border-none px-5 py-3.5 cursor-pointer transition-all duration-200 text-left hover:bg-gradient-to-br from-accent/5 to-primary/5 hover:text-accent"
+                      className={`flex items-center gap-3 w-full font-[family-name:var(--font-body)] font-medium text-[0.95rem] border-none px-5 py-3.5 cursor-pointer transition-all duration-200 text-left hover:bg-gradient-to-br from-accent/5 to-primary/5 ${
+                        persona === "patient"
+                          ? "bg-gradient-to-br from-accent/10 to-primary/10 text-accent font-semibold"
+                          : "bg-transparent text-navy hover:text-accent"
+                      }`}
                       onClick={() => handlePersonaChange("patient")}
                     >
                       <User size={16} />
                       {t("personas.patient")}
                     </button>
                     <button
-                      className="flex items-center gap-3 w-full font-[family-name:var(--font-body)] font-medium text-[0.95rem] text-navy bg-transparent border-none px-5 py-3.5 cursor-pointer transition-all duration-200 text-left hover:bg-gradient-to-br from-accent/5 to-primary/5 hover:text-accent"
+                      className={`flex items-center gap-3 w-full font-[family-name:var(--font-body)] font-medium text-[0.95rem] border-none px-5 py-3.5 cursor-pointer transition-all duration-200 text-left hover:bg-gradient-to-br from-accent/5 to-primary/5 ${
+                        persona === "practice"
+                          ? "bg-gradient-to-br from-accent/10 to-primary/10 text-accent font-semibold"
+                          : "bg-transparent text-navy hover:text-accent"
+                      }`}
                       onClick={() => handlePersonaChange("practice")}
                     >
                       <Building2 size={16} />
                       {t("personas.practice")}
                     </button>
                     <button
-                      className="flex items-center gap-3 w-full font-[family-name:var(--font-body)] font-medium text-[0.95rem] text-navy bg-transparent border-none px-5 py-3.5 cursor-pointer transition-all duration-200 text-left hover:bg-gradient-to-br from-accent/5 to-primary/5 hover:text-accent"
+                      className={`flex items-center gap-3 w-full font-[family-name:var(--font-body)] font-medium text-[0.95rem] border-none px-5 py-3.5 cursor-pointer transition-all duration-200 text-left hover:bg-gradient-to-br from-accent/5 to-primary/5 ${
+                        persona === "clinic"
+                          ? "bg-gradient-to-br from-accent/10 to-primary/10 text-accent font-semibold"
+                          : "bg-transparent text-navy hover:text-accent"
+                      }`}
                       onClick={() => handlePersonaChange("clinic")}
                     >
                       <Hospital size={16} />
@@ -252,21 +264,33 @@ function Layout({ children }: LayoutProps) {
                   {showPersonaMenu && (
                     <div className="mt-2 bg-white border border-[#0D6A6C]/10 rounded-2xl shadow-lg overflow-hidden">
                       <button
-                        className="flex items-center gap-3 w-full font-[family-name:var(--font-body)] font-medium text-[0.95rem] text-navy bg-transparent border-none px-5 py-3.5 cursor-pointer transition-all duration-200 text-left hover:bg-gradient-to-br from-accent/5 to-primary/5 hover:text-accent"
+                        className={`flex items-center gap-3 w-full font-[family-name:var(--font-body)] font-medium text-[0.95rem] border-none px-5 py-3.5 cursor-pointer transition-all duration-200 text-left hover:bg-gradient-to-br from-accent/5 to-primary/5 ${
+                          persona === "patient"
+                            ? "bg-gradient-to-br from-accent/10 to-primary/10 text-accent font-semibold"
+                            : "bg-transparent text-navy hover:text-accent"
+                        }`}
                         onClick={() => handlePersonaChange("patient")}
                       >
                         <User size={16} />
                         {t("personas.patient")}
                       </button>
                       <button
-                        className="flex items-center gap-3 w-full font-[family-name:var(--font-body)] font-medium text-[0.95rem] text-navy bg-transparent border-none px-5 py-3.5 cursor-pointer transition-all duration-200 text-left hover:bg-gradient-to-br from-accent/5 to-primary/5 hover:text-accent"
+                        className={`flex items-center gap-3 w-full font-[family-name:var(--font-body)] font-medium text-[0.95rem] border-none px-5 py-3.5 cursor-pointer transition-all duration-200 text-left hover:bg-gradient-to-br from-accent/5 to-primary/5 ${
+                          persona === "practice"
+                            ? "bg-gradient-to-br from-accent/10 to-primary/10 text-accent font-semibold"
+                            : "bg-transparent text-navy hover:text-accent"
+                        }`}
                         onClick={() => handlePersonaChange("practice")}
                       >
                         <Building2 size={16} />
                         {t("personas.practice")}
                       </button>
                       <button
-                        className="flex items-center gap-3 w-full font-[family-name:var(--font-body)] font-medium text-[0.95rem] text-navy bg-transparent border-none px-5 py-3.5 cursor-pointer transition-all duration-200 text-left hover:bg-gradient-to-br from-accent/5 to-primary/5 hover:text-accent"
+                        className={`flex items-center gap-3 w-full font-[family-name:var(--font-body)] font-medium text-[0.95rem] border-none px-5 py-3.5 cursor-pointer transition-all duration-200 text-left hover:bg-gradient-to-br from-accent/5 to-primary/5 ${
+                          persona === "clinic"
+                            ? "bg-gradient-to-br from-accent/10 to-primary/10 text-accent font-semibold"
+                            : "bg-transparent text-navy hover:text-accent"
+                        }`}
                         onClick={() => handlePersonaChange("clinic")}
                       >
                         <Hospital size={16} />
