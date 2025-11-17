@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { Calendar, Shield, Smartphone, Video, ShieldCheck, Lock, CheckCircle } from "lucide-react";
+import AnimatedPhoneMockup from "../components/AnimatedPhoneMockup";
 
 function ClinicPage() {
   const { t } = useTranslation();
@@ -61,11 +62,16 @@ function ClinicPage() {
 
           {/* CTAs */}
           <div className="flex gap-5 justify-center flex-wrap mb-16 animate-fade-in-up" style={{ animationDelay: '0.5s' }}>
-            <button className="group inline-flex items-center gap-2 font-[family-name:var(--font-body)] font-semibold text-base px-8 py-4 bg-white text-primary rounded-2xl transition-all duration-300 relative overflow-hidden shadow-[0_4px_24px_rgba(0,0,0,0.3)] hover:-translate-y-0.5 hover:shadow-[0_8px_32px_rgba(0,0,0,0.4)]">
+            <a
+              href="https://demo-medicare.eldrin.io/login"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group inline-flex items-center gap-2 font-[family-name:var(--font-body)] font-semibold text-base px-8 py-4 bg-white text-primary rounded-2xl transition-all duration-300 relative overflow-hidden shadow-[0_4px_24px_rgba(0,0,0,0.3)] hover:-translate-y-0.5 hover:shadow-[0_8px_32px_rgba(0,0,0,0.4)]"
+            >
               <span className="relative z-10">{t('clinic.hero.ctaPrimary')}</span>
               <span className="relative z-10 transition-transform duration-300 group-hover:translate-x-1">→</span>
               <span className="absolute top-1/2 left-1/2 w-0 h-0 rounded-full bg-white/20 -translate-x-1/2 -translate-y-1/2 transition-all duration-600 group-hover:w-[300px] group-hover:h-[300px]"></span>
-            </button>
+            </a>
             <button className="group inline-flex items-center gap-2 font-[family-name:var(--font-body)] font-semibold text-base px-8 py-4 bg-white/15 text-white border-2 border-white rounded-2xl backdrop-blur-[10px] transition-all duration-300 relative overflow-hidden hover:bg-white/25 hover:-translate-y-0.5">
               <span className="relative z-10">{t('clinic.hero.ctaSecondary')}</span>
               <span className="relative z-10 transition-transform duration-300 group-hover:translate-x-1">▶</span>
@@ -222,23 +228,11 @@ function ClinicPage() {
         <div className="max-w-[1200px] mx-auto grid md:grid-cols-2 gap-16 items-center animate-fade-in">
           {/* Visual - Phone Mockup */}
           <div className="flex items-center justify-center">
-            <div className="bg-white/5 border-2 border-white/10 rounded-[32px] p-12 min-h-[400px] flex items-center justify-center backdrop-blur-[10px]">
-              <div className="w-[280px] h-[560px] bg-gradient-to-b from-[#1F2937] to-[#111827] rounded-[40px] p-3 shadow-[0_24px_48px_rgba(0,0,0,0.4)] relative">
-                {/* Phone Notch */}
-                <div className="absolute top-5 left-1/2 -translate-x-1/2 w-[120px] h-6 bg-black rounded-b-[20px] z-10"></div>
-                {/* Phone Screen */}
-                <div className="w-full h-full bg-gradient-to-b from-[#FAFAF9] to-[#E5E7EB] rounded-[32px] p-12 pt-14 overflow-hidden">
-                  {/* Mock Header */}
-                  <div className="h-10 bg-[#0D6A6C]/10 rounded-xl mb-6"></div>
-                  {/* Mock Content Cards */}
-                  <div className="flex flex-col gap-4">
-                    <div className="h-[100px] bg-white rounded-xl shadow-[0_2px_8px_rgba(0,0,0,0.08)]"></div>
-                    <div className="h-[100px] bg-white rounded-xl shadow-[0_2px_8px_rgba(0,0,0,0.08)]"></div>
-                    <div className="h-[60px] bg-white rounded-xl shadow-[0_2px_8px_rgba(0,0,0,0.08)]"></div>
-                  </div>
-                </div>
-              </div>
-            </div>
+            <AnimatedPhoneMockup
+              screenshot="/mobile-screenshots/home-page-mobile-en.webp"
+              toolbar="/mobile-screenshots/home-page-mobile-toolbar-en.webp"
+              alt="MediCare clinic app interface"
+            />
           </div>
 
           {/* Details */}
@@ -360,11 +354,16 @@ function ClinicPage() {
 
           {/* Buttons */}
           <div className="flex gap-6 justify-center flex-wrap mb-8">
-            <button className="group inline-flex items-center gap-2 font-[family-name:var(--font-body)] font-semibold text-[1.1rem] px-10 py-5 bg-white text-primary rounded-2xl transition-all duration-300 relative overflow-hidden shadow-[0_8px_32px_rgba(0,0,0,0.2)] hover:-translate-y-0.5 hover:scale-105 hover:shadow-[0_12px_40px_rgba(0,0,0,0.3)]">
+            <a
+              href="https://demo-medicare.eldrin.io/login"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group inline-flex items-center gap-2 font-[family-name:var(--font-body)] font-semibold text-[1.1rem] px-10 py-5 bg-white text-primary rounded-2xl transition-all duration-300 relative overflow-hidden shadow-[0_8px_32px_rgba(0,0,0,0.2)] hover:-translate-y-0.5 hover:scale-105 hover:shadow-[0_12px_40px_rgba(0,0,0,0.3)]"
+            >
               <span className="relative z-10">{t('clinic.cta.ctaPrimary')}</span>
               <span className="relative z-10 transition-transform duration-300 group-hover:translate-x-1">→</span>
               <span className="absolute top-1/2 left-1/2 w-0 h-0 rounded-full bg-white/20 -translate-x-1/2 -translate-y-1/2 transition-all duration-600 group-hover:w-[300px] group-hover:h-[300px]"></span>
-            </button>
+            </a>
             <button className="group inline-flex items-center gap-2 font-[family-name:var(--font-body)] font-semibold text-[1.1rem] px-10 py-5 bg-white/10 text-white border-2 border-white rounded-2xl backdrop-blur-[10px] transition-all duration-300 relative overflow-hidden hover:bg-white/20 hover:-translate-y-0.5">
               <span className="relative z-10">{t('clinic.cta.ctaSecondary')}</span>
               <span className="absolute top-1/2 left-1/2 w-0 h-0 rounded-full bg-white/20 -translate-x-1/2 -translate-y-1/2 transition-all duration-600 group-hover:w-[300px] group-hover:h-[300px]"></span>
