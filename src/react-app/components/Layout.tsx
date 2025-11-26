@@ -1,5 +1,5 @@
 import { ReactNode, useState, useEffect } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import { useNavigate, useParams, Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { User, Building2, Hospital, Globe, ChevronDown, RotateCcw, Menu, X } from "lucide-react";
 
@@ -222,6 +222,7 @@ function Layout({ children }: LayoutProps) {
               <a href="#features" className="font-[family-name:var(--font-body)] font-semibold text-[0.95rem] text-navy no-underline transition-colors duration-300 relative after:content-[''] after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-0.5 after:bg-gradient-to-r after:from-accent after:to-primary-light after:transition-all after:duration-300 hover:text-accent hover:after:w-full">{t("nav.features")}</a>
               <a href="#solutions" className="font-[family-name:var(--font-body)] font-semibold text-[0.95rem] text-navy no-underline transition-colors duration-300 relative after:content-[''] after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-0.5 after:bg-gradient-to-r after:from-accent after:to-primary-light after:transition-all after:duration-300 hover:text-accent hover:after:w-full">{t("nav.solutions")}</a>
               <a href="#compliance" className="font-[family-name:var(--font-body)] font-semibold text-[0.95rem] text-navy no-underline transition-colors duration-300 relative after:content-[''] after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-0.5 after:bg-gradient-to-r after:from-accent after:to-primary-light after:transition-all after:duration-300 hover:text-accent hover:after:w-full">{t("nav.compliance")}</a>
+              <Link to={`/${lang}/blog`} className="font-[family-name:var(--font-body)] font-semibold text-[0.95rem] text-navy no-underline transition-colors duration-300 relative after:content-[''] after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-0.5 after:bg-gradient-to-r after:from-accent after:to-primary-light after:transition-all after:duration-300 hover:text-accent hover:after:w-full">{t("nav.blog")}</Link>
               <a href="#contact" className="bg-gradient-to-br from-primary to-primary-light text-white px-7 py-3 rounded-3xl transition-all duration-300 font-[family-name:var(--font-body)] font-semibold text-[0.95rem] no-underline hover:-translate-y-0.5 hover:shadow-[0_8px_24px_rgba(13,106,108,0.3)]">
                 {t("nav.getStarted")}
               </a>
@@ -371,6 +372,13 @@ function Layout({ children }: LayoutProps) {
                   >
                     {t("nav.compliance")}
                   </a>
+                  <Link
+                    to={`/${lang}/blog`}
+                    className="font-[family-name:var(--font-body)] font-semibold text-[0.95rem] text-navy no-underline px-4 py-3 rounded-lg transition-all duration-300 hover:bg-[#0D6A6C]/5 hover:text-accent"
+                    onClick={() => setShowMobileMenu(false)}
+                  >
+                    {t("nav.blog")}
+                  </Link>
                   <a
                     href="#contact"
                     className="bg-gradient-to-br from-primary to-primary-light text-white px-7 py-3 rounded-3xl transition-all duration-300 font-[family-name:var(--font-body)] font-semibold text-[0.95rem] no-underline text-center hover:shadow-[0_8px_24px_rgba(13,106,108,0.3)]"
@@ -419,7 +427,7 @@ function Layout({ children }: LayoutProps) {
               <div className="flex flex-col gap-2 sm:gap-2.5">
                 <a href="#about" className="text-white/70 no-underline transition-colors duration-300 text-[0.85rem] sm:text-[0.95rem] hover:text-accent-light">{t("footer.company.about")}</a>
                 <a href="#careers" className="text-white/70 no-underline transition-colors duration-300 text-[0.85rem] sm:text-[0.95rem] hover:text-accent-light">{t("footer.company.careers")}</a>
-                <a href="#blog" className="text-white/70 no-underline transition-colors duration-300 text-[0.85rem] sm:text-[0.95rem] hover:text-accent-light">{t("footer.company.blog")}</a>
+                <Link to={`/${lang}/blog`} className="text-white/70 no-underline transition-colors duration-300 text-[0.85rem] sm:text-[0.95rem] hover:text-accent-light">{t("footer.company.blog")}</Link>
                 <a href="#press" className="text-white/70 no-underline transition-colors duration-300 text-[0.85rem] sm:text-[0.95rem] hover:text-accent-light">{t("footer.company.press")}</a>
               </div>
             </div>

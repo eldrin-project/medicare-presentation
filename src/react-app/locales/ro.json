@@ -3,6 +3,7 @@
     "features": "Funcționalități",
     "solutions": "Soluții",
     "compliance": "Conformitate",
+    "blog": "Blog",
     "getStarted": "Începe"
   },
   "hero": {
@@ -184,5 +185,42 @@
     "en": "English",
     "ro": "Română",
     "ar": "العربية"
+  },
+  "blog": {
+    "hero": {
+      "badge": "Perspective în Sănătate",
+      "title": "MediCare",
+      "titleGradient": "Blog",
+      "subtitle": "Rămâi informat cu cele mai recente perspective despre tehnologia medicală, conformitate și cele mai bune practici pentru îngrijirea medicală modernă."
+    },
+    "search": {
+      "placeholder": "Caută articole..."
+    },
+    "categories": {
+      "all": "Toate Articolele"
+    },
+    "readTime": "min citire",
+    "readMore": "Citește Mai Mult",
+    "noResults": {
+      "title": "Nu au fost găsite articole",
+      "message": "Încearcă să ajustezi căutarea sau filtrul pentru a găsi ce cauți."
+    },
+    "newsletter": {
+      "title": "Rămâi Actualizat",
+      "subtitle": "Abonează-te la newsletter-ul nostru pentru cele mai recente perspective în sănătate livrate în căsuța ta de e-mail.",
+      "placeholder": "Introdu adresa de email",
+      "button": "Abonează-te"
+    },
+    "notFound": {
+      "title": "Articol Negăsit",
+      "message": "Articolul pe care îl cauți nu există sau a fost mutat."
+    },
+    "backToBlog": "Înapoi la Blog",
+    "aboutAuthor": "Despre Autor",
+    "recentPosts": "Articole Recente",
+    "share": "Distribuie",
+    "exploreMore": "Explorează Mai Multe Articole",
+    "exploreMoreSubtitle": "Descoperă mai multe perspective despre tehnologia medicală și cele mai bune practici.",
+    "viewAllPosts": "Vezi Toate Articolele"
   }
 }

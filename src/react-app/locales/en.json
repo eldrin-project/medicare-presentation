@@ -3,6 +3,7 @@
     "features": "Features",
     "solutions": "Solutions",
     "compliance": "Compliance",
+    "blog": "Blog",
     "getStarted": "Get Started"
   },
   "patient": {
@@ -320,5 +321,42 @@
     "en": "English",
     "ro": "Română",
     "ar": "العربية"
+  },
+  "blog": {
+    "hero": {
+      "badge": "Healthcare Insights",
+      "title": "MediCare",
+      "titleGradient": "Blog",
+      "subtitle": "Stay informed with the latest insights on healthcare technology, compliance, and best practices for modern medical care."
+    },
+    "search": {
+      "placeholder": "Search articles..."
+    },
+    "categories": {
+      "all": "All Posts"
+    },
+    "readTime": "min read",
+    "readMore": "Read More",
+    "noResults": {
+      "title": "No articles found",
+      "message": "Try adjusting your search or filter to find what you're looking for."
+    },
+    "newsletter": {
+      "title": "Stay Updated",
+      "subtitle": "Subscribe to our newsletter for the latest healthcare insights delivered to your inbox.",
+      "placeholder": "Enter your email",
+      "button": "Subscribe"
+    },
+    "notFound": {
+      "title": "Article Not Found",
+      "message": "The article you're looking for doesn't exist or has been moved."
+    },
+    "backToBlog": "Back to Blog",
+    "aboutAuthor": "About the Author",
+    "recentPosts": "Recent Posts",
+    "share": "Share",
+    "exploreMore": "Explore More Articles",
+    "exploreMoreSubtitle": "Discover more insights on healthcare technology and best practices.",
+    "viewAllPosts": "View All Posts"
   }
 }

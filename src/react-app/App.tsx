@@ -5,6 +5,8 @@ import Layout from "./components/Layout";
 import PatientPage from "./pages/PatientPage";
 import PracticePage from "./pages/PracticePage";
 import ClinicPage from "./pages/ClinicPage";
+import BlogListingPage from "./pages/BlogListingPage";
+import BlogDetailsPage from "./pages/BlogDetailsPage";
 
 // Persona selection component
 function PersonaSelector() {
@@ -84,6 +86,10 @@ function App() {
         path="/:lang"
         element={<PersonaSelector />}
       />
+
+      {/* Blog Routes - must be before persona routes */}
+      <Route path="/:lang/blog" element={<Layout><BlogListingPage /></Layout>} />
+      <Route path="/:lang/blog/:slug" element={<Layout><BlogDetailsPage /></Layout>} />
 
       {/* Language + Persona Routes */}
       <Route path="/:lang/:persona" element={<PersonaPage />} />
